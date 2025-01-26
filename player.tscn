@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://qgg20fyvktk7"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_aoqmc"]
+[ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://icon.svg" id="1_jwiju"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amq37"]
+radius = 10.6667
+height = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_aoqmc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_amq37")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -1.78814e-06)
+scale = Vector2(0.166667, 0.25)
+texture = ExtResource("1_jwiju")
+
+[node name="Jump Buffer Timer" type="Timer" parent="."]
+
+[node name="Coyote Timer" type="Timer" parent="."]
