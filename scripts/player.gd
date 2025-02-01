@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@onready var sprite_2d: Sprite2D = $CollisionShape2D/Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = $CollisionShape2D/Sprite2D
 @onready var jump_buffer_timer: Timer = $"Jump Buffer Timer"
 @onready var coyote_timer: Timer = $"Coyote Timer"
 
@@ -14,6 +14,8 @@ extends CharacterBody2D
 @export var coyote_time: float = 0.075
 @export var jump_buffer_time: float = 0.15
 @export var fall_clamp : float = 100
+
+
 var is_dying = false
 var is_jumping = false
 var jump_available: bool = true
@@ -50,7 +52,6 @@ func _physics_process(delta):
 			jump_buffer = true
 			if jump_buffer_timer.is_stopped():
 				jump_buffer_timer.start(jump_buffer_time)
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
@@ -62,7 +63,26 @@ func _physics_process(delta):
 	move_and_slide()
 
 func update_animation(direction):
-	pass
+	if velocity.x > 0 and is_on_floor():
+		sprite_2d.play("run")
+		sprite_2d.flip_h = false
+	elif velocity.x < 0 and is_on_floor():
+		sprite_2d.play("run")
+		sprite_2d.flip_h = true
+	elif velocity.x == 0 and is_on_floor():
+		sprite_2d.play("idle")
+	elif velocity.y < 0:
+		sprite_2d.play("jump")
+		if Input.is_action_just_pressed("right"):
+			sprite_2d.flip_h = false
+		elif Input.is_action_just_pressed("left"):
+			sprite_2d.flip_h = true
+	elif velocity.y > 0:
+		sprite_2d.play("fall")
+		if Input.is_action_just_pressed("right"):
+			sprite_2d.flip_h = false
+		elif Input.is_action_just_pressed("left"):
+			sprite_2d.flip_h = true
 		
 func set_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
