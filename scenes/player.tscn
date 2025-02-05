@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2keu6x4kihe0" path="res://assets/Sprits/Player/RUN.png" id="5_fnxm2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amq37"]
-radius = 5.33333
+radius = 5.0
 height = 20.6667
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ud153"]
@@ -320,13 +320,17 @@ animations = [{
 scale = Vector2(3, 3)
 script = ExtResource("1_aoqmc")
 
+[node name="BatSpawnPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5, 0)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.333333)
 shape = SubResource("CapsuleShape2D_amq37")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 texture_filter = 1
-position = Vector2(-3.27826e-07, -13.6667)
+position = Vector2(-2.84217e-14, -13.6667)
 scale = Vector2(0.559028, 0.559028)
 sprite_frames = SubResource("SpriteFrames_87cku")
 animation = &"idle"

@@ -1,7 +1,12 @@
 extends CharacterBody2D
+
+signal bat_thrown
 @onready var sprite_2d: AnimatedSprite2D = $CollisionShape2D/Sprite2D
 @onready var jump_buffer_timer: Timer = $"Jump Buffer Timer"
 @onready var coyote_timer: Timer = $"Coyote Timer"
+@onready var bat_spawn_point: Marker2D = %BatSpawnPoint
+
+const BAT = preload("res://scenes/bat.tscn")
 
 @onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak) * -1.0
 @onready var jump_gravity : float = ((-2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak)) * -1.0
@@ -55,6 +60,8 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
+	if Input.is_action_just_pressed("throw"):
+		throw()
 	if direction:
 		velocity.x = direction * move_speed
 	else:
@@ -62,7 +69,7 @@ func _physics_process(delta):
 	update_animation(direction)
 	move_and_slide()
 
-func update_animation(direction):
+func update_animation(_direction):
 	if velocity.x > 0 and is_on_floor():
 		sprite_2d.play("run")
 		sprite_2d.flip_h = false
@@ -81,8 +88,10 @@ func update_animation(direction):
 		sprite_2d.play("fall")
 		if Input.is_action_just_pressed("right"):
 			sprite_2d.flip_h = false
+			bat_spawn_point.global_position.x = 50
 		elif Input.is_action_just_pressed("left"):
 			sprite_2d.flip_h = true
+			bat_spawn_point.global_position.x = -50
 		
 func set_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity
@@ -97,3 +106,7 @@ func on_jump_buffer_timeout():
 	
 func coyote_timeout():
 	jump_available = false
+
+func throw():
+	bat_thrown.emit(bat_spawn_point.global_position)
+	

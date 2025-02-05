@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://bqffwuyjo4ra1"]
+[gd_scene load_steps=6 format=4 uid="uid://bqffwuyjo4ra1"]
 
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player.tscn" id="1_2nk06"]
+[ext_resource type="Script" path="res://scenes/testing_ground.gd" id="1_y0kge"]
 [ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="2_oqaiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_escop"]
@@ -81,7 +82,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_escop")
 
 [node name="Testing Ground" type="Node2D"]
-position = Vector2(576, 324)
+script = ExtResource("1_y0kge")
 
 [node name="Player" parent="." instance=ExtResource("1_2nk06")]
 position = Vector2(1.52588e-05, 0)
