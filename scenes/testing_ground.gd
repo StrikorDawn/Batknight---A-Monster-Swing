@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_bat_thrown(spawn_point):
-	print(spawn_point)
 	var bat = BAT.instantiate()
-	bat.original_position = spawn_point
+	bat.forward_velocity = spawn_point.x * 1
+	bat.position = spawn_point
 	add_child(bat)

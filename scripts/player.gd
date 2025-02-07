@@ -20,7 +20,6 @@ const BAT = preload("res://scenes/bat.tscn")
 @export var jump_buffer_time: float = 0.15
 @export var fall_clamp : float = 100
 
-
 var is_dying = false
 var is_jumping = false
 var jump_available: bool = true
@@ -61,6 +60,10 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if Input.is_action_just_pressed("throw"):
+		if sprite_2d.flip_h == true:
+			bat_spawn_point.position.x = -10
+		else:
+			bat_spawn_point.position.x = 10
 		throw()
 	if direction:
 		velocity.x = direction * move_speed
@@ -88,10 +91,8 @@ func update_animation(_direction):
 		sprite_2d.play("fall")
 		if Input.is_action_just_pressed("right"):
 			sprite_2d.flip_h = false
-			bat_spawn_point.global_position.x = 50
 		elif Input.is_action_just_pressed("left"):
 			sprite_2d.flip_h = true
-			bat_spawn_point.global_position.x = -50
 		
 func set_gravity() -> float:
 	return jump_gravity if velocity.y < 0.0 else fall_gravity

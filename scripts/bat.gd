@@ -1,18 +1,14 @@
 extends RigidBody2D
 var force = Vector2()
+@onready var bat: RigidBody2D = $"."
+@export var forward_velocity : int = 50
+@export var upward_velocity : int = -10
 
-var original_position = Vector2.ZERO
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(self.global_position)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	#apply_force()
 	pass
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	state.transform.origin.x = original_position.x
-	state.transform.origin.y = original_position.y
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	bat.apply_impulse(Vector2i(forward_velocity, upward_velocity))
 	

@@ -322,7 +322,7 @@ script = ExtResource("1_aoqmc")
 
 [node name="BatSpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(5, 0)
+position = Vector2(7, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.333333)
