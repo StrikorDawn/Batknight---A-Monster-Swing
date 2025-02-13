@@ -4,6 +4,7 @@ class_name JumpState
 @export var min_jump_time: float = 0.1  # Minimum time the player must rise before cutting the jump
 var jump_timer: float = 0.0  # Track time since jump started
 
+# Sets Jump state entry conditions
 func enter_state() -> void:
 	# Allow jump if jump_buffer or coyote_time was active
 	if player.jump_buffer or player.jump_available or player.is_on_floor():
@@ -24,7 +25,7 @@ func do_physics_process(delta: float) -> void:
 		player.velocity.x = direction * player.move_speed  # Maintain control in air
 		player.sprite_2d.flip_h = direction < 0
 	else:
-		player.velocity.x = 0
+		player.velocity.x = 0 # Allows the player to stop arial momentum
 	
 	# Jump Cut - Reduces velocity only after the min jump time has passed
 	if not Input.is_action_pressed("jump") and jump_timer > min_jump_time:
@@ -35,4 +36,5 @@ func do_physics_process(delta: float) -> void:
 	
 	# If the player starts falling, transition to FallState
 	if player.velocity.y > 0:
+		player.jump_available = false
 		player.set_state(player.states["Fall"])

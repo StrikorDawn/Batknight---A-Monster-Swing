@@ -1,6 +1,7 @@
 extends PlayerState
 class_name ThrowState
 
+# Sets Throw state entry conditions
 func enter_state() -> void:
 	player.sprite_2d.play("throw")
 	player.throw()
