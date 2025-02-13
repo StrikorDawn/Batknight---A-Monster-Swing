@@ -337,6 +337,6 @@ animation = &"throw"
 autoplay = "idle"
 offset = Vector2(0, 10)
 
-[node name="Jump Buffer Timer" type="Timer" parent="."]
+[node name="JumpBufferTimer" type="Timer" parent="."]
 
-[node name="Coyote Timer" type="Timer" parent="."]
+[node name="CoyoteTimer" type="Timer" parent="."]

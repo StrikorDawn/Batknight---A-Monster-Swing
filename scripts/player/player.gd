@@ -9,8 +9,8 @@ const BAT = preload("res://scenes/bat.tscn")
 
 # Node References
 @onready var sprite_2d: AnimatedSprite2D = $CollisionShape2D/Sprite2D
-@onready var jump_buffer_timer: Timer = $"Jump Buffer Timer"
-@onready var coyote_timer: Timer = $"Coyote Timer"
+@onready var jump_buffer_timer: Timer = $JumpBufferTimer
+@onready var coyote_timer: Timer = $CoyoteTimer
 @onready var bat_spawn_point: Marker2D = %BatSpawnPoint
 
 # Custom Player Gravity Calculations
@@ -21,10 +21,10 @@ const BAT = preload("res://scenes/bat.tscn")
 # Player Movment Variables
 @export var move_speed = 275
 @export var jump_height: float = 125
-@export var jump_time_to_peak: float = .5
+@export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
 @export var coyote_time: float = 0.1
-@export var jump_buffer_time: float = 1.0
+@export var jump_buffer_time: float = 0.25
 #@export var fall_clamp: float = 100
 
 # Player Check variables
@@ -95,10 +95,12 @@ func start_jump_buffer():
 	jump_buffer = true
 	jump_buffer_timer.one_shot = true
 	jump_buffer_timer.start(jump_buffer_time)
+	print("Buffer window start")
 
 # Ensures no uninteded jumps occur
 func on_jump_buffer_timeout():
 	jump_buffer = false
+	print("You missed it")
 
 # Signals that the player want's to throw a bat
 func throw():

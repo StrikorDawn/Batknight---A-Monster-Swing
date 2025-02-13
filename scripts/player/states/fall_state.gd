@@ -9,12 +9,14 @@ func enter_state():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func do_physics_process(delta: float) -> void:
 	var direction = Input.get_axis("left", "right")
+	# Maintain control in air
 	if direction:
-		player.velocity.x = direction * player.move_speed  # Maintain control in air
+		player.velocity.x = direction * player.move_speed  
 		player.sprite_2d.flip_h = direction < 0
 	else:
 		player.velocity.x = 0 # Allows the player to stop arial momentum
-		
+	
+	# Apply fall gravity
 	if not player.is_on_floor():
 		player.velocity.y += player.fall_gravity * delta  # Apply fall gravity
 		
@@ -22,7 +24,16 @@ func do_physics_process(delta: float) -> void:
 		if player.jump_available and Input.is_action_just_pressed("jump"):
 			player.set_state(player.states["Jump"])
 		
-	elif direction:
-		player.set_state(player.states["Run"])
+		# Jump buffer: If the player presses jump mid-air, store the intent
+		if Input.is_action_just_pressed("jump"):
+			player.start_jump_buffer()
 	else:
-		player.set_state(player.states["Idle"])
+		# Check if jump buffer is active when landing
+		if player.jump_buffer:
+			player.set_state(player.states["Jump"])
+		# Check if Player is moving when landing
+		elif direction:
+			player.set_state(player.states["Run"])
+		# Set player to Idle when Landed
+		else:
+			player.set_state(player.states["Idle"])
