@@ -1,6 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://qgg20fyvktk7"]
+[gd_scene load_steps=48 format=3 uid="uid://qgg20fyvktk7"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_aoqmc"]
+[ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="2_1gaox"]
 [ext_resource type="Texture2D" uid="uid://48ulvy6rijdf" path="res://assets/Sprits/Player/ATTACK 1.png" id="2_063av"]
 [ext_resource type="Texture2D" uid="uid://cl43hcmadg014" path="res://assets/Sprits/Player/HURT.png" id="2_xu1h8"]
 [ext_resource type="Texture2D" uid="uid://0hqr6rx445ir" path="res://assets/Sprits/Player/IDLE.png" id="4_vl6bc"]
@@ -322,10 +323,14 @@ script = ExtResource("1_aoqmc")
 
 [node name="BatSpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(7, 0)
+position = Vector2(15, 0)
+gizmo_extents = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="BatSpawnPoint"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_1gaox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.333333)
 shape = SubResource("CapsuleShape2D_amq37")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -333,7 +338,7 @@ texture_filter = 1
 position = Vector2(-2.84217e-14, -13.6667)
 scale = Vector2(0.559028, 0.559028)
 sprite_frames = SubResource("SpriteFrames_87cku")
-animation = &"throw"
+animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, 10)
 

@@ -8,14 +8,7 @@ func enter_state():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func do_physics_process(delta: float) -> void:
-	var direction = Input.get_axis("left", "right")
-	# Maintain control in air
-	if direction:
-		player.velocity.x = direction * player.move_speed  
-		player.sprite_2d.flip_h = direction < 0
-	else:
-		player.velocity.x = 0 # Allows the player to stop arial momentum
-	
+	var direction = set_direction()
 	# Apply fall gravity
 	if not player.is_on_floor():
 		player.velocity.y += player.fall_gravity * delta  # Apply fall gravity

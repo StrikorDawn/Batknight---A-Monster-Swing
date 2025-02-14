@@ -19,3 +19,15 @@ func do_physics_process(_delta: float) -> void:
 # Not really sure what this does, but will find out if we actually need to use it.
 #func do_input(_event: InputEvent) -> void:
 	#pass
+
+func set_direction():
+	var direction = Input.get_axis("left", "right")
+	# Maintain control in air
+	if direction:
+		player.velocity.x = direction * player.move_speed  
+		player.sprite_2d.flip_h = direction < 0
+			
+	else:
+		player.velocity.x = 0 # Allows the player to stop arial momentum
+		
+	return direction

@@ -20,12 +20,7 @@ func enter_state() -> void:
 func do_physics_process(delta: float) -> void:
 	jump_timer += delta  # Track jump duration
 	
-	var direction = Input.get_axis("left", "right")
-	if direction:
-		player.velocity.x = direction * player.move_speed  # Maintain control in air
-		player.sprite_2d.flip_h = direction < 0
-	else:
-		player.velocity.x = 0 # Allows the player to stop arial momentum
+	set_direction()
 	
 	# Jump Cut - Reduces velocity only after the min jump time has passed
 	if not Input.is_action_pressed("jump") and jump_timer > min_jump_time:

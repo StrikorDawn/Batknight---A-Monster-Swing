@@ -33,6 +33,7 @@ var was_on_floor : bool
 var is_jumping: bool = false
 var jump_available: bool = false
 var jump_buffer: bool = false
+var is_facing_right: bool
 
 # Player State Variables
 var states = {}
@@ -61,6 +62,11 @@ func _ready():
 
 # Calls Physics Code
 func _physics_process(delta):
+	if Input.is_action_just_pressed("left"):
+		bat_spawn_point.position.x = -15
+	elif Input.is_action_just_pressed("right"):
+		bat_spawn_point.position.x = 15
+	
 	on_floor_now = is_on_floor() # Marks if player was on flor 
 	
 	# If we were on the floor but now we are not, start coyote time
@@ -95,13 +101,12 @@ func start_jump_buffer():
 	jump_buffer = true
 	jump_buffer_timer.one_shot = true
 	jump_buffer_timer.start(jump_buffer_time)
-	print("Buffer window start")
 
 # Ensures no uninteded jumps occur
 func on_jump_buffer_timeout():
 	jump_buffer = false
-	print("You missed it")
 
 # Signals that the player want's to throw a bat
 func throw():
-	bat_thrown.emit(bat_spawn_point.global_position)
+	bat_thrown.emit(bat_spawn_point.global_position, is_facing_right)
+	

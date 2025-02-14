@@ -11,8 +11,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_bat_thrown(spawn_point):
+func _on_bat_thrown(spawn_point, is_on_right):
 	var bat = BAT.instantiate()
-	bat.forward_velocity = spawn_point.x * 1
+	if is_on_right == true:
+		bat.rotation = 0
+	elif is_on_right == false:
+		bat.rotation = 270
+	
 	bat.position = spawn_point
+	
 	add_child(bat)
