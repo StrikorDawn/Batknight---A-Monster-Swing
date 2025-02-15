@@ -3,7 +3,6 @@ class_name Player
 
 # Custom Signals
 signal bat_thrown
-
 # Preloaded Scenes
 const BAT = preload("res://scenes/bat.tscn")
 
@@ -63,9 +62,11 @@ func _ready():
 # Calls Physics Code
 func _physics_process(delta):
 	if Input.is_action_just_pressed("left"):
+		is_facing_right = false
 		bat_spawn_point.position.x = -15
 	elif Input.is_action_just_pressed("right"):
 		bat_spawn_point.position.x = 15
+		is_facing_right = true
 	
 	on_floor_now = is_on_floor() # Marks if player was on flor 
 	
@@ -109,4 +110,3 @@ func on_jump_buffer_timeout():
 # Signals that the player want's to throw a bat
 func throw():
 	bat_thrown.emit(bat_spawn_point.global_position, is_facing_right)
-	

@@ -4,23 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="1_78pkx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6il8"]
-size = Vector2(50, 8)
+size = Vector2(48, 8)
 
 [node name="Bat" type="RigidBody2D"]
-position = Vector2(24, 0)
-center_of_mass_mode = 1
 script = ExtResource("1_6e4wh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_b6il8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.390625, 0.0625)
+scale = Vector2(0.375, 0.0625)
 texture = ExtResource("1_78pkx")
-
-[node name="SpinTimer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[connection signal="timeout" from="SpinTimer" to="." method="_on_spin_timer_timeout"]

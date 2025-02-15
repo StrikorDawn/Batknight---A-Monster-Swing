@@ -15,9 +15,11 @@ func _on_bat_thrown(spawn_point, is_on_right):
 	var bat = BAT.instantiate()
 	if is_on_right == true:
 		bat.rotation = 0
+		bat.throw_direction = true
 	elif is_on_right == false:
 		bat.rotation = 270
+		bat.throw_direction = false
+		
 	
 	bat.position = spawn_point
-	
 	add_child(bat)
