@@ -20,7 +20,8 @@ func enter_state() -> void:
 func do_physics_process(delta: float) -> void:
 	jump_timer += delta  # Track jump duration
 	
-	set_direction()
+	var direction = set_direction()
+	handle_movement(direction, player.move_speed)
 	
 	# Jump Cut - Reduces velocity only after the min jump time has passed
 	if not Input.is_action_pressed("jump") and jump_timer > min_jump_time:
@@ -33,3 +34,6 @@ func do_physics_process(delta: float) -> void:
 	if player.velocity.y > 0:
 		player.jump_available = false
 		player.set_state(player.states["Fall"])
+
+	if Input.is_action_just_pressed("dash") and player.dash_available == true:
+		player.set_state(player.states["Dash"])
