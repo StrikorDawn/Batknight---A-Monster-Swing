@@ -3,6 +3,7 @@ class_name Player
 
 # Custom Signals
 signal bat_thrown
+
 # Preloaded Scenes
 const BAT = preload("res://scenes/bat.tscn")
 
@@ -29,6 +30,8 @@ const BAT = preload("res://scenes/bat.tscn")
 @export var jump_buffer_time: float = 0.25
 @export var fall_clamp: float = 750
 
+var bat_count : int = 2
+
 # Player Check variables
 var on_floor_now : bool
 var was_on_floor : bool
@@ -44,7 +47,7 @@ var states = {}
 var current_state: PlayerState
 
 func _ready():
-	#add_to_group("Player")
+	add_to_group("Player")
 	
 	# Create and store state instances
 	states["Idle"] = IdleState.new()
@@ -124,3 +127,9 @@ func _on_dash_cool_down_timeout() -> void:
 # Signals that the player want's to throw a bat
 func throw():
 	bat_thrown.emit(bat_spawn_point.global_position, is_facing_right)
+
+func get_bat_count() -> int:
+	return bat_count
+	
+func set_bat_count(bat_number : int):
+	bat_count += bat_number
