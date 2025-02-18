@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bisvb6ni6hr37"]
 
-[ext_resource type="Script" path="res://scripts/bats/bat.gd" id="1_6e4wh"]
-[ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="1_78pkx"]
+[ext_resource type="Script" path="res://scripts/bats/bat.gd" id="1_5y468"]
+[ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="2_l83ay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6il8"]
 size = Vector2(50, 8)
@@ -14,7 +14,7 @@ position = Vector2(24, 0)
 mass = 0.94
 center_of_mass_mode = 1
 center_of_mass = Vector2(7, 0)
-script = ExtResource("1_6e4wh")
+script = ExtResource("1_5y468")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -22,7 +22,7 @@ shape = SubResource("RectangleShape2D_b6il8")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
 scale = Vector2(0.390625, 0.0625)
-texture = ExtResource("1_78pkx")
+texture = ExtResource("2_l83ay")
 
 [node name="SpinTimer" type="Timer" parent="."]
 wait_time = 0.25
