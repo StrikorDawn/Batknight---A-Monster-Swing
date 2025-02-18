@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://byrqkobbi33dk"]
+
+[ext_resource type="Script" path="res://scripts/Menus/pause_menu.gd" id="1_dbqwg"]
+
+[node name="Pause Menu" type="Node2D"]
+position = Vector2(355, 250)
+scale = Vector2(8.4376, 8.4376)
+script = ExtResource("1_dbqwg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(0.727884, 0.89094, 1, 1)
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.3935, 16.8205)
+
+[node name="Play" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -38.9921
+offset_top = -16.7109
+offset_right = 9.00789
+offset_bottom = 14.2891
+scale = Vector2(0.427884, 0.427884)
+text = "Play"
+
+[node name="Options" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -39.4662
+offset_top = 0.829618
+offset_right = 30.5338
+offset_bottom = 31.8296
+scale = Vector2(0.427884, 0.427884)
+text = "Options"
+
+[node name="Main Menu" type="Button" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -38.6366
+offset_top = 18.4887
+offset_right = 57.3634
+offset_bottom = 49.4887
+scale = Vector2(0.427884, 0.427884)
+text = "Main Menu"
