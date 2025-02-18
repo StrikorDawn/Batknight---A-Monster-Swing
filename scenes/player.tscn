@@ -318,6 +318,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
+collision_mask = 3
 script = ExtResource("1_aoqmc")
 
 [node name="BatSpawnPoint" type="Marker2D" parent="."]
@@ -337,6 +338,19 @@ animation = &"idle"
 autoplay = "idle"
 offset = Vector2(0, 10)
 
-[node name="JumpBufferTimer" type="Timer" parent="."]
+[node name="Jump" type="Node" parent="."]
 
-[node name="CoyoteTimer" type="Timer" parent="."]
+[node name="JumpBufferTimer" type="Timer" parent="Jump"]
+
+[node name="CoyoteTimer" type="Timer" parent="Jump"]
+
+[node name="Dash" type="Node" parent="."]
+
+[node name="DashTimer" type="Timer" parent="Dash"]
+wait_time = 0.25
+
+[node name="DashCoolDown" type="Timer" parent="Dash"]
+wait_time = 0.5
+
+[connection signal="timeout" from="Dash/DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Dash/DashCoolDown" to="." method="_on_dash_cool_down_timeout"]

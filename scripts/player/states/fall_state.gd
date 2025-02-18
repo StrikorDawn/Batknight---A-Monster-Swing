@@ -9,10 +9,19 @@ func enter_state():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func do_physics_process(delta: float) -> void:
 	var direction = set_direction()
+	handle_movement(direction, player.move_speed)
 	# Apply fall gravity
 	if not player.is_on_floor():
-		player.velocity.y += player.fall_gravity * delta  # Apply fall gravity
-		
+		# Controls player fall speed over time
+		if player.velocity.y < player.fall_clamp:
+			player.velocity.y += player.fall_gravity * delta  # Apply fall gravity
+		else:
+			player.velocity.y = player.fall_clamp
+			 
+		# If Dash is allowed sets to dash.
+		if Input.is_action_just_pressed("dash") and player.dash_available == true:
+			player.set_state(player.states["Dash"])
+			
 		# Jump is allowed if within coyote time
 		if player.jump_available and Input.is_action_just_pressed("jump"):
 			player.set_state(player.states["Jump"])
@@ -20,6 +29,7 @@ func do_physics_process(delta: float) -> void:
 		# Jump buffer: If the player presses jump mid-air, store the intent
 		if Input.is_action_just_pressed("jump"):
 			player.start_jump_buffer()
+			
 	else:
 		# Check if jump buffer is active when landing
 		if player.jump_buffer:

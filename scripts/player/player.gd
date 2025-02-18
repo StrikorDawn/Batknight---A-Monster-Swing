@@ -3,13 +3,16 @@ class_name Player
 
 # Custom Signals
 signal bat_thrown
+
 # Preloaded Scenes
 const BAT = preload("res://scenes/bat.tscn")
 
 # Node References
 @onready var sprite_2d: AnimatedSprite2D = $CollisionShape2D/Sprite2D
-@onready var jump_buffer_timer: Timer = $JumpBufferTimer
-@onready var coyote_timer: Timer = $CoyoteTimer
+@onready var jump_buffer_timer: Timer = $Jump/JumpBufferTimer
+@onready var coyote_timer: Timer = $Jump/CoyoteTimer
+@onready var dash_timer: Timer = $Dash/DashTimer
+@onready var dash_cool_down: Timer = $Dash/DashCoolDown
 @onready var bat_spawn_point: Marker2D = %BatSpawnPoint
 
 # Custom Player Gravity Calculations
@@ -18,35 +21,41 @@ const BAT = preload("res://scenes/bat.tscn")
 @onready var fall_gravity : float = ((-2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent)) * -1.0
 
 # Player Movment Variables
-@export var move_speed = 275
+@export var move_speed : int = 275
+@export var dash_speed : int = 1000
 @export var jump_height: float = 125
 @export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
 @export var coyote_time: float = 0.1
 @export var jump_buffer_time: float = 0.25
-#@export var fall_clamp: float = 100
+@export var fall_clamp: float = 750
+
+var bat_count : int = 2
 
 # Player Check variables
 var on_floor_now : bool
 var was_on_floor : bool
-var is_jumping: bool = false
-var jump_available: bool = false
-var jump_buffer: bool = false
-var is_facing_right: bool
+var is_jumping : bool = false
+var jump_available : bool = false
+var jump_buffer : bool = false
+var is_facing_right : bool
+var is_dashing : bool
+var dash_available : bool = true
 
 # Player State Variables
 var states = {}
 var current_state: PlayerState
 
 func _ready():
-	#add_to_group("Player")
+	add_to_group("Player")
 	
 	# Create and store state instances
 	states["Idle"] = IdleState.new()
 	states["Run"] = RunState.new()
 	states["Jump"] = JumpState.new()
-	states["Throw"] = ThrowState.new()
 	states["Fall"] = FallState.new()
+	states["Throw"] = ThrowState.new()
+	states["Dash"] = DashState.new()
 
 	# Assign player reference to each state
 	for state in states.values():
@@ -106,7 +115,21 @@ func start_jump_buffer():
 # Ensures no uninteded jumps occur
 func on_jump_buffer_timeout():
 	jump_buffer = false
+	
+# Ensures dash ends
+func _on_dash_timer_timeout():
+	is_dashing = false
+
+# Ensures player cannot spam dash
+func _on_dash_cool_down_timeout() -> void:
+	dash_available = true
 
 # Signals that the player want's to throw a bat
 func throw():
 	bat_thrown.emit(bat_spawn_point.global_position, is_facing_right)
+
+func get_bat_count() -> int:
+	return bat_count
+	
+func set_bat_count(bat_number : int):
+	bat_count += bat_number

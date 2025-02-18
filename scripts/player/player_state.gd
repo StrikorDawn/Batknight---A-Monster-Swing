@@ -3,6 +3,7 @@ class_name PlayerState  # This makes it a globally recognized class
 
 # Allows us to acces the Player attributes
 var player: Player
+var direction
 
 # Allows us to set up State attrubutes and animations for first frame
 func enter_state() -> void:
@@ -20,14 +21,18 @@ func do_physics_process(_delta: float) -> void:
 #func do_input(_event: InputEvent) -> void:
 	#pass
 
+# This is used to set the direction fo the sprite based on player movemnt
 func set_direction():
 	var direction = Input.get_axis("left", "right")
-	# Maintain control in air
 	if direction:
-		player.velocity.x = direction * player.move_speed  
 		player.sprite_2d.flip_h = direction < 0
-			
-	else:
-		player.velocity.x = 0 # Allows the player to stop arial momentum
-		
+	
 	return direction
+
+# This function is used to handle basic movements accross different states
+func handle_movement(direction, move_speed):
+	if direction:
+		player.velocity.x = direction * move_speed # Will move the player forward based on direction.
+
+	else:
+		player.velocity.x = 0 # Allows the player to stop while in the air
