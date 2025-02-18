@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c24507ky4oc6"]
+[gd_scene load_steps=7 format=3 uid="uid://c24507ky4oc6"]
 
 [ext_resource type="Script" path="res://scripts/maps/maze.gd" id="1_ghda2"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_rbw5s"]
-[ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_u10j4"]
 [ext_resource type="PackedScene" uid="uid://byrqkobbi33dk" path="res://scenes/menus/pause_menu.tscn" id="4_djvwe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g7q1"]
@@ -254,14 +253,6 @@ offset_bottom = 40.0
 scale = Vector2(0.852865, 0.852865)
 text = "Restart"
 icon = SubResource("PlaceholderTexture2D_vrhpa")
-
-[node name="Player" parent="." instance=ExtResource("2_u10j4")]
-position = Vector2(96, 672)
-scale = Vector2(3.04, 3.04)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-1.36495e-05, -11.5132)
-zoom = Vector2(2, 2)
 
 [node name="Pause Menu" parent="." instance=ExtResource("4_djvwe")]
 visible = false

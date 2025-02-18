@@ -1,7 +1,7 @@
-extends Node2D
+extends Node
 
 @onready var player: CharacterBody2D = $Player
-const BAT = preload("res://scenes/bat.tscn")
+const BAT = preload("res://scenes/bat/bat.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.bat_thrown.connect(_on_bat_thrown)
