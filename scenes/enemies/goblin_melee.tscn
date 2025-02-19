@@ -168,7 +168,6 @@ frame_progress = 0.48532
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinMeleeHitbox"]
 position = Vector2(0, 0.791736)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_t6hab")
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
