@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bxd66xcp552t0"
-path="res://.godot/imported/punch_blocked_04.wav-34fd88080317c1023e13bb00fbe085f0.sample"
+path="res://.godot/imported/punch_blocked_04.wav-d9092bde579d3316736f95694a073d78.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/punch_blocked_04.wav"
-dest_files=["res://.godot/imported/punch_blocked_04.wav-34fd88080317c1023e13bb00fbe085f0.sample"]
+source_file="res://assets/sounds/punch_blocked_04.wav"
+dest_files=["res://.godot/imported/punch_blocked_04.wav-d9092bde579d3316736f95694a073d78.sample"]
 
 [params]
 
