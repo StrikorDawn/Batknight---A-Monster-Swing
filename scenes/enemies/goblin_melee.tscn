@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://dq5h3qcylfoum"]
+[gd_scene load_steps=22 format=3 uid="uid://bnpsnrh55vejd"]
 
 [ext_resource type="Script" path="res://scripts/enemies/goblin.gd" id="1_vhkee"]
-[ext_resource type="Texture2D" uid="uid://c35mhjkpfsrv4" path="res://assets/Sprits/Goblin/goblin_placeholder_spritesheet.png" id="2_mv1mu"]
+[ext_resource type="Texture2D" uid="uid://c35mhjkpfsrv4" path="res://assets/sprits/goblin/goblin_placeholder_spritesheet.png" id="2_mv1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hec2u"]
 size = Vector2(28, 46)

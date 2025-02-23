@@ -1,12 +1,8 @@
-extends CharacterBody2D
-
-class_name goblin_enemy
+extends EnemyClass
+class_name GoblinMelee
 
 const speed = 50
 var is_goblin_chase: bool = true
-
-var health = 80
-var health_max = 80
 var health_min = 0
 
 var dead: bool = false
@@ -21,7 +17,8 @@ var is_roaming: bool = true
 
 var player: CharacterBody2D
 var player_in_area = false
-
+func _ready():
+	set_health(80)
 
 func _process(delta):
 	if !is_on_floor():
@@ -33,7 +30,11 @@ func _process(delta):
 	move(delta)
 	handle_animation()
 	move_and_slide()
-
+	
+func set_health(value):
+	super.set_health(value)
+	health -= 20
+	
 func move(delta):
 	if !dead:
 		if !is_goblin_chase:
