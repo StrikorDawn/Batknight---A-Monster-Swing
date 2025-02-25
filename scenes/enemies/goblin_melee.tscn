@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dq5h3qcylfoum"]
+[gd_scene load_steps=22 format=3 uid="uid://bnpsnrh55vejd"]
 
 [ext_resource type="Script" path="res://scripts/enemies/goblin.gd" id="1_vhkee"]
-[ext_resource type="Texture2D" uid="uid://c35mhjkpfsrv4" path="res://assets/Sprits/Goblin/goblin_placeholder_spritesheet.png" id="2_mv1mu"]
+[ext_resource type="Texture2D" uid="uid://c35mhjkpfsrv4" path="res://assets/sprits/goblin/goblin_placeholder_spritesheet.png" id="2_mv1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hec2u"]
 size = Vector2(28, 46)
@@ -146,6 +146,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6hab"]
+size = Vector2(32.7251, 49.0877)
+
 [node name="GoblinMelee" type="CharacterBody2D"]
 scale = Vector2(1.89457, 1.89457)
 script = ExtResource("1_vhkee")
@@ -161,4 +164,11 @@ frame_progress = 0.48532
 
 [node name="DirectionTimer" type="Timer" parent="."]
 
+[node name="GoblinMeleeHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinMeleeHitbox"]
+position = Vector2(0, 0.791736)
+shape = SubResource("RectangleShape2D_t6hab")
+
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
+[connection signal="area_entered" from="GoblinMeleeHitbox" to="." method="_on_goblin_melee_hitbox_area_entered"]
