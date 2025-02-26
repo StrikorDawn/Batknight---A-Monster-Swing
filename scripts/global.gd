@@ -1,4 +1,5 @@
 extends Node
+<<<<<<< HEAD
 
 #Map Constants
 const CYCLOPES_MAZE = preload("res://scenes/Maps/MapBases/maze_base.tscn")
@@ -12,6 +13,11 @@ const CYCLOPES_BOSS_ROOM = preload("res://scenes/Maps/MapBases/boss_room_base.ts
 @onready var player: CharacterBody2D = $Player
 const BAT = preload("res://scenes/bat/bat.tscn")
 
+=======
+
+@onready var player: CharacterBody2D = $Player
+const BAT = preload("res://scenes/bat/bat.tscn")
+>>>>>>> main
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.bat_thrown.connect(_on_bat_thrown)
