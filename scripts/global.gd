@@ -1,7 +1,17 @@
-extends Node2D
+extends Node
+
+#Map Constants
+const CYCLOPES_MAZE = preload("res://scenes/Maps/MapBases/maze_base.tscn")
+const CYCLOPES_BOSS_ROOM = preload("res://scenes/Maps/MapBases/boss_room_base.tscn")
+
+@onready var maze: Node2D = $Maze
+
+@onready var pause_menu: Node2D = $"CanvasLayer/Pause Menu"
+@onready var pause: Button = $CanvasLayer/Pause
 
 @onready var player: CharacterBody2D = $Player
-const BAT = preload("res://scenes/bat.tscn")
+const BAT = preload("res://scenes/bat/bat.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.bat_thrown.connect(_on_bat_thrown)
@@ -27,3 +37,22 @@ func _on_bat_thrown(spawn_point, is_on_right):
 
 func _on_bat_grabbed():
 	player.set_bat_count(1)
+
+
+#Functions for the Pause Menu
+
+func _on_pause_pressed() -> void:
+	get_tree().paused = true #pause the scene
+	maze.visible = false #hide maze
+	player.visible = false
+	pause.visible = false
+	pause_menu.show_pause() #show pause menu
+	
+
+func _on_pause_menu_play() -> void:
+	maze.visible = true
+	get_tree().paused = false
+	pause_menu.hide_pause()
+	pause.visible = true
+	player.visible = true
+	
