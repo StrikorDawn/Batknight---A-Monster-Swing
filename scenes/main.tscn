@@ -1,8 +1,19 @@
+<<<<<<< HEAD
+[gd_scene load_steps=6 format=3 uid="uid://dad8wwxevugn6"]
+
+[ext_resource type="PackedScene" uid="uid://c24507ky4oc6" path="res://scenes/Maps/MapBases/maze_base.tscn" id="1_3qmt3"]
+[ext_resource type="Script" path="res://scripts/global.gd" id="1_6aldk"]
+[ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_u1iab"]
+[ext_resource type="PackedScene" uid="uid://byrqkobbi33dk" path="res://scenes/Menus/pause_menu.tscn" id="4_ipr8j"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_6f6hf"]
+=======
 [gd_scene load_steps=4 format=3 uid="uid://dad8wwxevugn6"]
 
 [ext_resource type="PackedScene" uid="uid://c24507ky4oc6" path="res://scenes/maps/maze.tscn" id="1_3qmt3"]
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_6aldk"]
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_u1iab"]
+>>>>>>> main
 
 [node name="Main" type="Node"]
 script = ExtResource("1_6aldk")
@@ -10,8 +21,39 @@ script = ExtResource("1_6aldk")
 [node name="Maze" parent="." instance=ExtResource("1_3qmt3")]
 
 [node name="Player" parent="." instance=ExtResource("2_u1iab")]
+<<<<<<< HEAD
+position = Vector2(-488, 1673)
+scale = Vector2(3.04, 3.04)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+light_mask = 512
+visibility_layer = 512
+position = Vector2(1.19209e-07, -37.1711)
+zoom = Vector2(1.25, 1.25)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Pause" type="Button" parent="CanvasLayer"]
+z_index = 10
+z_as_relative = false
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 79.0
+offset_bottom = 40.0
+scale = Vector2(0.852865, 0.852865)
+text = "Pause"
+icon = SubResource("PlaceholderTexture2D_6f6hf")
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("4_ipr8j")]
+position = Vector2(643, 437)
+
+[connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_pause_pressed"]
+[connection signal="play" from="CanvasLayer/Pause Menu" to="." method="_on_pause_menu_play"]
+=======
 position = Vector2(96, 672)
 scale = Vector2(3.04, 3.04)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1.36495e-05, -11.5132)
+>>>>>>> main
