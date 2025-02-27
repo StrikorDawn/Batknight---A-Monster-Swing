@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://c24507ky4oc6"]
+[gd_scene load_steps=6 format=3 uid="uid://c24507ky4oc6"]
 
-[ext_resource type="Script" path="res://scripts/maps/maze.gd" id="1_ghda2"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_rbw5s"]
 [ext_resource type="PackedScene" uid="uid://byrqkobbi33dk" path="res://scenes/menus/pause_menu.tscn" id="4_djvwe"]
 
@@ -221,8 +220,7 @@ sources/0 = SubResource("TileSetAtlasSource_6g7q1")
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vrhpa"]
 
-[node name="Maze" type="Node2D"]
-script = ExtResource("1_ghda2")
+[node name="TestMaze" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(345, 153)

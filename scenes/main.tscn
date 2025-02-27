@@ -1,21 +1,24 @@
 [gd_scene load_steps=5 format=3 uid="uid://b372im2jd3i1e"]
 
 [ext_resource type="Script" path="res://scripts/global.gd" id="1_6aldk"]
-[ext_resource type="PackedScene" uid="uid://c24507ky4oc6" path="res://scenes/maps/level1/maze_base.tscn" id="2_isixg"]
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_u1iab"]
+[ext_resource type="PackedScene" uid="uid://c24507ky4oc6" path="res://scenes/maps/cyclopes/maze_base.tscn" id="4_aea0r"]
 [ext_resource type="PackedScene" uid="uid://byrqkobbi33dk" path="res://scenes/menus/pause_menu.tscn" id="4_vd8pj"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_6aldk")
 
-[node name="Maze" parent="." instance=ExtResource("2_isixg")]
-
 [node name="Player" parent="." instance=ExtResource("2_u1iab")]
 position = Vector2(-10, 811)
 scale = Vector2(4.2477, 4.2477)
+move_speed = 400
+jump_height = 225.0
+coyote_time = 0.15
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1.33514e-05, -11.5132)
+
+[node name="Maze" parent="." instance=ExtResource("4_aea0r")]
 
 [node name="Menus" type="CanvasLayer" parent="."]
 offset = Vector2(-586.5, 437.5)

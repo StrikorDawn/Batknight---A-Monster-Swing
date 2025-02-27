@@ -1,8 +1,8 @@
 extends Node
 
 #Map Constants
-const CYCLOPES_MAZE = preload("res://scenes/maps/level1/boss_room_base.tscn")
-const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/level1/maze_base.tscn")
+const CYCLOPES_MAZE = preload("res://scenes/maps/cyclopes/maze_base.tscn")
+const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/cyclopes/boss_room_base.tscn")
 
 var maze = CYCLOPES_MAZE
 
