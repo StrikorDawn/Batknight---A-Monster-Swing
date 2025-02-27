@@ -27,8 +27,7 @@ folder_colors={
 "res://assets/Sounds/": "blue",
 "res://assets/Sprits/": "blue",
 "res://scenes/Maps/": "blue",
-"res://scenes/Maps/MapBases/": "blue",
-"res://scenes/Menus/": "blue"
+"res://scenes/Maps/MapBases/": "blue"
 }
 
 [global_group]
