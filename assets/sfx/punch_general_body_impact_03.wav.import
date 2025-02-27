@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d25mrf1r2lsi1"
-path="res://.godot/imported/punch_general_body_impact_03.wav-3184be4097ca4e6dd73a974b78787ea3.sample"
+path="res://.godot/imported/punch_general_body_impact_03.wav-b2126cf937f157cff8be9c37655b98c9.sample"
 
 [deps]
 
-source_file="res://assets/Sounds/punch_general_body_impact_03.wav"
-dest_files=["res://.godot/imported/punch_general_body_impact_03.wav-3184be4097ca4e6dd73a974b78787ea3.sample"]
+source_file="res://assets/sfx/punch_general_body_impact_03.wav"
+dest_files=["res://.godot/imported/punch_general_body_impact_03.wav-b2126cf937f157cff8be9c37655b98c9.sample"]
 
 [params]
 

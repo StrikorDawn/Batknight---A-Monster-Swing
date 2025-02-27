@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkf2tp1pafjy0"
-path="res://.godot/imported/Goblin_Placeholder.webp-07d85caf43d0c3061a5b4d27459a4a9d.ctex"
+path="res://.godot/imported/Goblin_Placeholder.webp-c7c28ffc4501b4adb79b463467af1ffb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprits/Goblin/Goblin_Placeholder.webp"
-dest_files=["res://.godot/imported/Goblin_Placeholder.webp-07d85caf43d0c3061a5b4d27459a4a9d.ctex"]
+source_file="res://assets/sprites/goblin/Goblin_Placeholder.webp"
+dest_files=["res://.godot/imported/Goblin_Placeholder.webp-c7c28ffc4501b4adb79b463467af1ffb.ctex"]
 
 [params]
 
