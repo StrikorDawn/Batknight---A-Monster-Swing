@@ -15,10 +15,6 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
-[autoload]
-
-GlobalNavigation="*res://scripts/Maps/global_navigation.gd"
-
 [display]
 
 window/size/mode=2
@@ -27,18 +23,12 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://assets/": "blue",
 "res://assets/Buttons/": "blue",
 "res://assets/Sounds/": "blue",
 "res://assets/Sprits/": "blue",
-"res://assets/tile_maps/": "blue",
-"res://scenes/": "blue",
 "res://scenes/Maps/": "blue",
 "res://scenes/Maps/MapBases/": "blue",
-"res://scenes/Menus/": "blue",
-"res://scenes/bat/": "blue",
-"res://scenes/player/": "blue",
-"res://scripts/": "blue"
+"res://scenes/Menus/": "blue"
 }
 
 [global_group]

@@ -18,5 +18,6 @@ func _on_button_pressed() -> void:
 #Navigation
 
 func _on_to_boss_room_body_entered(body: Node2D) -> void:
-	boss_room.emit()
+	if body.is_in_group("Player"):
+		boss_room.emit()
 	

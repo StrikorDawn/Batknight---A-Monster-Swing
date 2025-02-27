@@ -23,7 +23,7 @@ func do_physics_process(_delta: float) -> void:
 
 # This is used to set the direction fo the sprite based on player movemnt
 func set_direction():
-	var direction = Input.get_axis("left", "right")
+	direction = Input.get_axis("left", "right")
 	if direction:
 		player.sprite_2d.flip_h = direction < 0
 	

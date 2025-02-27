@@ -255,7 +255,6 @@ text = "Restart"
 icon = SubResource("PlaceholderTexture2D_vrhpa")
 
 [node name="Pause Menu" parent="." instance=ExtResource("4_djvwe")]
-visible = false
 position = Vector2(373, 224)
 
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

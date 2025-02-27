@@ -8,7 +8,7 @@ func enter_state() -> void:
 	else:
 		player.sprite_2d.play("idle")
 func do_physics_process(_delta: float) -> void:
-	var direction = set_direction()
+	direction = set_direction()
 	handle_movement(direction, player.move_speed)
 	if direction:
 		player.sprite_2d.play("run")

@@ -31,7 +31,7 @@ func _physics_process(_delta: float) -> void:
 # Function to apply force to the bat
 func throw_bat_logic() -> void:
 	if throw_direction == true:
-		forward_velocity == abs(forward_velocity)
+		forward_velocity = abs(forward_velocity)
 		spin = abs(spin)
 	elif throw_direction == false:
 		forward_velocity *= -1

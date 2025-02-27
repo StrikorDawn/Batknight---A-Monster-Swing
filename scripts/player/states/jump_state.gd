@@ -20,7 +20,7 @@ func enter_state() -> void:
 func do_physics_process(delta: float) -> void:
 	jump_timer += delta  # Track jump duration
 	
-	var direction = set_direction()
+	direction = set_direction()
 	handle_movement(direction, player.move_speed)
 	
 	# Jump Cut - Reduces velocity only after the min jump time has passed

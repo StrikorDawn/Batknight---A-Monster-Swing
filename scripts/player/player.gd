@@ -30,7 +30,7 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 @export var jump_buffer_time: float = 0.25
 @export var fall_clamp: float = 750
 
-var bat_count : int = 2
+var bat_count : int = 1
 
 # Player Check variables
 var on_floor_now : bool
