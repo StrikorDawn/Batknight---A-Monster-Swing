@@ -96,7 +96,7 @@ func _physics_process(delta):
 		bat_spawn_point.position.x = 15
 		is_facing_right = true
 	
-	on_floor_now = is_on_floor() # Marks if player was on flor 
+	on_floor_now = is_on_floor() # Marks if player was on floor 
 	
 	# If we were on the floor but now we are not, start coyote time
 	if was_on_floor and not on_floor_now:
