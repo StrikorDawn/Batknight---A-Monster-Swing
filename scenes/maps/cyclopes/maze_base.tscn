@@ -274,5 +274,8 @@ offset_right = 8.0
 grow_vertical = 0
 text = "Reset"
 
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(0, 792)
+
 [connection signal="body_entered" from="ToBossRoom" to="." method="_on_to_boss_room_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

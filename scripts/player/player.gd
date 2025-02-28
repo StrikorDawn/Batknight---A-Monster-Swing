@@ -36,7 +36,7 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 @export var jump_height: float = 125
 @export var jump_time_to_peak: float = 0.5
 @export var jump_time_to_descent: float = 0.4
-@export var coyote_time: float = 0.1
+@export var coyote_time: float = 0.15
 @export var jump_buffer_time: float = 0.25
 @export var fall_clamp: float = 750
 
