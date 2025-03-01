@@ -5,7 +5,7 @@ class_name Player
 signal bat_thrown
 
 # Preloaded Scenes
-const BAT = preload("res://scenes/bat.tscn")
+const BAT = preload("res://scenes/bat/bat.tscn")
 
 # Node References
 @onready var sprite_2d: AnimatedSprite2D = $CollisionShape2D/Sprite2D

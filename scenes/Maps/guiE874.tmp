@@ -475,5 +475,3 @@ tile_set = SubResource("TileSet_16ioo")
 [node name="Player" parent="." instance=ExtResource("2_iopj1")]
 position = Vector2(-131, -52)
 scale = Vector2(4.5, 4.5)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
