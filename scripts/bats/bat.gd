@@ -6,6 +6,7 @@ signal bat_grabbed
 # Node References
 @onready var bat: RigidBody2D = $"."
 @onready var spin_timer: Timer = $SpinTimer
+@onready var grab_timer: Timer = $GrabTimer
 
 # Bat Movement Variables
 @export var forward_velocity : int = 750
@@ -30,6 +31,7 @@ func _physics_process(_delta: float) -> void:
 
 # Function to apply force to the bat
 func throw_bat_logic() -> void:
+	grab_timer.start()
 	if throw_direction == true:
 		forward_velocity = abs(forward_velocity)
 		spin = abs(spin)
@@ -47,3 +49,8 @@ func _on_grab_area_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		bat_grabbed.emit()
 		queue_free()
+
+
+func _on_grab_timer_timeout() -> void:
+	bat_grabbed.emit()
+	queue_free()

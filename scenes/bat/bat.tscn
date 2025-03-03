@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bisvb6ni6hr37"]
 
-[ext_resource type="Script" path="res://scripts/bats/bat.gd" id="1_5y468"]
+[ext_resource type="Script" uid="uid://bdw5w0244hv4a" path="res://scripts/bats/bat.gd" id="1_5y468"]
 [ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="2_l83ay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6il8"]
@@ -36,5 +36,9 @@ position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_8mkip")
 debug_color = Color(0.757736, 0.185178, 1, 0.42)
 
+[node name="GrabTimer" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="timeout" from="SpinTimer" to="." method="_on_spin_timer_timeout"]
 [connection signal="body_entered" from="GrabArea" to="." method="_on_grab_area_entered"]
+[connection signal="timeout" from="GrabTimer" to="." method="_on_grab_timer_timeout"]
