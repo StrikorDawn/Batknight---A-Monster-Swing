@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2morxsf1nx1m"]
+
+[ext_resource type="Script" path="res://scripts/enemies/skeleton.gd" id="1_1543r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0g4c"]
+size = Vector2(54, 118)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13v8u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yq077"]
+
+[node name="Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_1543r")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 50.0
+offset_bottom = 114.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 57)
+shape = SubResource("RectangleShape2D_v0g4c")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+position = Vector2(25, 57)
+scale = Vector2(19.3668, 19.3668)
+shape = SubResource("CircleShape2D_13v8u")
+
+[node name="Aggro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Aggro"]
+position = Vector2(25, 57)
+scale = Vector2(31.6357, 31.6357)
+shape = SubResource("CircleShape2D_yq077")
