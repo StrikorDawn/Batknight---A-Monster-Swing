@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=4 uid="uid://dptm87w8bl8xb"]
 
-[ext_resource type="Texture2D" uid="uid://c52rvs6mhvgxo" path="res://assets/Backgrounds/SkyBG.png" id="1_7uew7"]
+[ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/Backgrounds/SkyBG.png" id="1_7uew7"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
 [ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/Objects/PlayerHouse.png" id="1_r2gjj"]
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_iopj1"]
@@ -513,3 +513,7 @@ position = Vector2(-131, -52)
 scale = Vector2(4.5, 4.5)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-131, -140)
