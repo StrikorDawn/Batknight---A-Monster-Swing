@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hxcv3e36t438"
+path="res://.godot/imported/Female Death 1.mp3-d624a1f14555a55e8a286d223dd49dc2.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/voices/Female Death 1.mp3"
+dest_files=["res://.godot/imported/Female Death 1.mp3-d624a1f14555a55e8a286d223dd49dc2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

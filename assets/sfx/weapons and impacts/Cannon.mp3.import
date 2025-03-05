@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chy48xbawmao"
+path="res://.godot/imported/Cannon.mp3-0507d7d84bbf2ef19ed13e9bc32d51d5.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/weapons and impacts/Cannon.mp3"
+dest_files=["res://.godot/imported/Cannon.mp3-0507d7d84bbf2ef19ed13e9bc32d51d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

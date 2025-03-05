@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1nh58duugbgq"
+path="res://.godot/imported/Horse Step (Road) 1.mp3-a6a8eeb4b75a2d3516f138816344ec4b.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Horse Step (Road) 1.mp3"
+dest_files=["res://.godot/imported/Horse Step (Road) 1.mp3-a6a8eeb4b75a2d3516f138816344ec4b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

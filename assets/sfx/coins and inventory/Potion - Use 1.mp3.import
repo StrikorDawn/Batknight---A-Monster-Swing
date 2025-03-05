@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw3t6g58mqmb8"
+path="res://.godot/imported/Potion - Use 1.mp3-3638a1c9c685133d94de339e4f81a58f.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/coins and inventory/Potion - Use 1.mp3"
+dest_files=["res://.godot/imported/Potion - Use 1.mp3-3638a1c9c685133d94de339e4f81a58f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

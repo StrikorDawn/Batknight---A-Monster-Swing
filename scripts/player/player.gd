@@ -91,9 +91,9 @@ func _ready():
 func _physics_process(delta):
 	if Input.is_action_just_pressed("left"):
 		is_facing_right = false
-		bat_spawn_point.position.x = -15
+		bat_spawn_point.position.x = -56
 	elif Input.is_action_just_pressed("right"):
-		bat_spawn_point.position.x = 15
+		bat_spawn_point.position.x = 56
 		is_facing_right = true
 	
 	on_floor_now = is_on_floor() # Marks if player was on floor 

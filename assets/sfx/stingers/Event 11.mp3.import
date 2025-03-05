@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lnph4xciu7nv"
+path="res://.godot/imported/Event 11.mp3-4d16d7e0d5d485db3a7c4bef7a4e1f1c.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/stingers/Event 11.mp3"
+dest_files=["res://.godot/imported/Event 11.mp3-4d16d7e0d5d485db3a7c4bef7a4e1f1c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

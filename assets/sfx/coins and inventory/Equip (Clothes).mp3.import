@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dur2j431kfd2x"
+path="res://.godot/imported/Equip (Clothes).mp3-e7db48c534cb4b2169aee0d137e5495b.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/coins and inventory/Equip (Clothes).mp3"
+dest_files=["res://.godot/imported/Equip (Clothes).mp3-e7db48c534cb4b2169aee0d137e5495b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

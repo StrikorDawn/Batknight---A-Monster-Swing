@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxas4bikie6ds"
+path="res://.godot/imported/Step (water) 1.mp3-35d6f2996e5e2dc1802048b979a734a9.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/steps/Step (water) 1.mp3"
+dest_files=["res://.godot/imported/Step (water) 1.mp3-35d6f2996e5e2dc1802048b979a734a9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

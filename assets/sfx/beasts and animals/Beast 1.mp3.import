@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d4d3idu65ivf4"
+path="res://.godot/imported/Beast 1.mp3-9642a5e55725b0a7a79ad3e26bdb4a80.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Beast 1.mp3"
+dest_files=["res://.godot/imported/Beast 1.mp3-9642a5e55725b0a7a79ad3e26bdb4a80.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

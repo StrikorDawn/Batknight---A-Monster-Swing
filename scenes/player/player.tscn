@@ -313,11 +313,10 @@ animations = [{
 }],
 "loop": false,
 "name": &"throw",
-"speed": 15.0
+"speed": 30.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(4.5, 4.5)
 collision_mask = 3
 script = ExtResource("1_aoqmc")
 move_speed = 400
@@ -325,15 +324,16 @@ jump_height = 225.0
 
 [node name="BatSpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(15, 0)
+position = Vector2(22.51, 0)
 gizmo_extents = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.5, 4.506)
 shape = SubResource("CapsuleShape2D_amq37")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 texture_filter = 1
-position = Vector2(-2.84217e-14, -13.6667)
+position = Vector2(1.69407e-21, -14.2033)
 scale = Vector2(0.559028, 0.559028)
 sprite_frames = SubResource("SpriteFrames_87cku")
 animation = &"idle"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmfm8uopbe8d0"
+path="res://.godot/imported/Beast Sleeping (Cave).mp3-1ac1118cc43ef85be4f3d4e48880c21c.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Beast Sleeping (Cave).mp3"
+dest_files=["res://.godot/imported/Beast Sleeping (Cave).mp3-1ac1118cc43ef85be4f3d4e48880c21c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

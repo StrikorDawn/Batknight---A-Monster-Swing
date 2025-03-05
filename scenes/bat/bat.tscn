@@ -1,38 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://bisvb6ni6hr37"]
+[gd_scene load_steps=4 format=3 uid="uid://bisvb6ni6hr37"]
 
 [ext_resource type="Script" uid="uid://bdw5w0244hv4a" path="res://scripts/bats/bat.gd" id="1_5y468"]
-[ext_resource type="Texture2D" uid="uid://bw8b1qbrvvj0n" path="res://assets/icon.svg" id="2_l83ay"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6il8"]
-size = Vector2(50, 8)
+[ext_resource type="Texture2D" uid="uid://2xd5oitw3ttq" path="res://assets/sprites/baseball bats/slugger-bat-gifts.png" id="2_gb2kl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkip"]
-size = Vector2(52, 10)
+size = Vector2(83.228, 15)
 
 [node name="Bat" type="RigidBody2D"]
-position = Vector2(24, 0)
 mass = 0.94
 center_of_mass_mode = 1
 center_of_mass = Vector2(7, 0)
 script = ExtResource("1_5y468")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_b6il8")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(20.7493, -0.243705)
+scale = Vector2(1.04622, 0.755302)
+polygon = PackedVector2Array(-25, -4, -24, -4, -22, -3, 3, -3, 17, -5, 28, -5, 30, -2, 30, 2, 28, 5, 17, 5, 3, 3, -22, 3, -24, 5, -25, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(0.390625, 0.0625)
-texture = ExtResource("2_l83ay")
+position = Vector2(2, 0)
+scale = Vector2(0.0673077, 0.144509)
+texture = ExtResource("2_gb2kl")
 
 [node name="SpinTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
 
 [node name="GrabArea" type="Area2D" parent="."]
+position = Vector2(15, 0)
+scale = Vector2(0.727803, 0.575468)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea"]
-position = Vector2(1, 0)
+position = Vector2(11.386, -0.5)
 shape = SubResource("RectangleShape2D_8mkip")
 debug_color = Color(0.757736, 0.185178, 1, 0.42)
 

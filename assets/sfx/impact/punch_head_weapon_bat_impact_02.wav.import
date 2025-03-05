@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://db8iouvngcgbg"
-path="res://.godot/imported/punch_head_weapon_bat_impact_02.wav-0b26fb24c4f6e54d1abb67b30934b184.sample"
+path="res://.godot/imported/punch_head_weapon_bat_impact_02.wav-347b0e5b5bad0b17c39b72b3280cb873.sample"
 
 [deps]
 
-source_file="res://assets/sfx/punch_head_weapon_bat_impact_02.wav"
-dest_files=["res://.godot/imported/punch_head_weapon_bat_impact_02.wav-0b26fb24c4f6e54d1abb67b30934b184.sample"]
+source_file="res://assets/sfx/impact/punch_head_weapon_bat_impact_02.wav"
+dest_files=["res://.godot/imported/punch_head_weapon_bat_impact_02.wav-347b0e5b5bad0b17c39b72b3280cb873.sample"]
 
 [params]
 

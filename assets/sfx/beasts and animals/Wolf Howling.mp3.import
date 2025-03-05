@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwyjt6waanl5w"
+path="res://.godot/imported/Wolf Howling.mp3-275d1b2ba987aff6bcc43c14f258af82.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Wolf Howling.mp3"
+dest_files=["res://.godot/imported/Wolf Howling.mp3-275d1b2ba987aff6bcc43c14f258af82.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
