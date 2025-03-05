@@ -14,7 +14,7 @@ script = ExtResource("1_5y468")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(20.7493, -0.243705)
-scale = Vector2(1.04622, 0.755302)
+scale = Vector2(1.12622, 0.915303)
 polygon = PackedVector2Array(-25, -4, -24, -4, -22, -3, 3, -3, 17, -5, 28, -5, 30, -2, 30, 2, 28, 5, 17, 5, 3, 3, -22, 3, -24, 5, -25, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
@@ -28,7 +28,7 @@ one_shot = true
 
 [node name="GrabArea" type="Area2D" parent="."]
 position = Vector2(15, 0)
-scale = Vector2(0.727803, 0.575468)
+scale = Vector2(0.783454, 0.697374)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea"]
