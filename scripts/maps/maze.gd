@@ -26,14 +26,6 @@ func show_pause():
 	#turn on visibility for pause menu 
 	#check to make sure you cant press buttons while menu is invisible 
 
-#Reset Button
-
-func reload_maze():
-	get_tree().reload_current_scene()
-
-func _on_button_pressed() -> void:
-	reload_maze()
-	#This function and its related button are for debugging only and should be removed later
 
 #Navigation
 
