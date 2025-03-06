@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Batknight - A Monster Swing"
-run/main_scene="res://scenes/Maps654654/guild_camp.tscn"
+run/main_scene="res://scenes/maps/guild_camp.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
