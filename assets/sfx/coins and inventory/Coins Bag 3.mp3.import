@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jhyli4tbu7c1"
+path="res://.godot/imported/Coins Bag 3.mp3-9f745c08ca25057788247218edbeb083.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/coins and inventory/Coins Bag 3.mp3"
+dest_files=["res://.godot/imported/Coins Bag 3.mp3-9f745c08ca25057788247218edbeb083.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

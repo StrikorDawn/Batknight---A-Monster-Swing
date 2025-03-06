@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmarmjbtu8tf5"
+path="res://.godot/imported/Spell - Ice Broken.mp3-51c5ebd6498cbbc885f57534e968c328.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/spells/Spell - Ice Broken.mp3"
+dest_files=["res://.godot/imported/Spell - Ice Broken.mp3-51c5ebd6498cbbc885f57534e968c328.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

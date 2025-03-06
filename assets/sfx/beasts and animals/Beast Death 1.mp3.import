@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l0rf0m05ks7h"
+path="res://.godot/imported/Beast Death 1.mp3-8dcbcc097f8a86cbd379a1a21f827ed0.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Beast Death 1.mp3"
+dest_files=["res://.godot/imported/Beast Death 1.mp3-8dcbcc097f8a86cbd379a1a21f827ed0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

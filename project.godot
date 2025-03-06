@@ -11,9 +11,28 @@ config_version=5
 [application]
 
 config/name="Batknight - A Monster Swing"
-run/main_scene="res://scenes/maps/guild_camp.tscn"
+
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
+
+[display]
+
+window/stretch/aspect="expand"
+
+[file_customization]
+
+folder_colors={
+"res://assets/Buttons/": "blue",
+"res://assets/Sounds/": "blue",
+"res://assets/Sprits/": "blue",
+"res://scenes/Maps/": "blue",
+"res://scenes/Maps/MapBases/": "blue"
+}
+
+[global_group]
+
+maps=""
 
 [input]
 

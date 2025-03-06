@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ct4udrvjl4qiu"
+path="res://.godot/imported/Voice Old RPG Approve.mp3-9f2edaa881abeca1fabc1949e5ed570b.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/voices/Voice Old RPG Approve.mp3"
+dest_files=["res://.godot/imported/Voice Old RPG Approve.mp3-9f2edaa881abeca1fabc1949e5ed570b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

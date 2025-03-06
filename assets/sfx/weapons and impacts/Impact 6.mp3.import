@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgr06n0u67yl5"
+path="res://.godot/imported/Impact 6.mp3-f02510eaf2898a978a98b8423e9d151c.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/weapons and impacts/Impact 6.mp3"
+dest_files=["res://.godot/imported/Impact 6.mp3-f02510eaf2898a978a98b8423e9d151c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

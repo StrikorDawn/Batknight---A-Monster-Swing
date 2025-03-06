@@ -8,7 +8,7 @@ func enter_state():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func do_physics_process(delta: float) -> void:
-	var direction = set_direction()
+	direction = set_direction()
 	handle_movement(direction, player.move_speed)
 	# Apply fall gravity
 	if not player.is_on_floor():

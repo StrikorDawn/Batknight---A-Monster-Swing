@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi52uikqglmix"
+path="res://.godot/imported/Horse Neight 2.mp3-06ddf4c857484d6be637f615915485f6.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Horse Neight 2.mp3"
+dest_files=["res://.godot/imported/Horse Neight 2.mp3-06ddf4c857484d6be637f615915485f6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

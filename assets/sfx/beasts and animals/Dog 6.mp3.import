@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fwxa43ona2d1"
+path="res://.godot/imported/Dog 6.mp3-e671052dc36eac6897e507ae6d4e83f3.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Dog 6.mp3"
+dest_files=["res://.godot/imported/Dog 6.mp3-e671052dc36eac6897e507ae6d4e83f3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

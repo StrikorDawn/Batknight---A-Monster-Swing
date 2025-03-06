@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d38x0mdjg1a0k"
+path="res://.godot/imported/Voice Approve 3.mp3-17bf757b132b851db2b533ab8047d91c.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/voices/Voice Approve 3.mp3"
+dest_files=["res://.godot/imported/Voice Approve 3.mp3-17bf757b132b851db2b533ab8047d91c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

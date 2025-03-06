@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drktaphccesei"
+path="res://.godot/imported/Stepbeast 1.mp3-c84e1a47167f499c638cb4a9ccce55cb.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/steps/Stepbeast 1.mp3"
+dest_files=["res://.godot/imported/Stepbeast 1.mp3-c84e1a47167f499c638cb4a9ccce55cb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

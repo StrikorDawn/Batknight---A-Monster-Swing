@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu6wgqbfao13o"
+path="res://.godot/imported/Spell - Air 2.mp3-3c7034bde67196ebfb2fa97438e96f5c.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/spells/Spell - Air 2.mp3"
+dest_files=["res://.godot/imported/Spell - Air 2.mp3-3c7034bde67196ebfb2fa97438e96f5c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

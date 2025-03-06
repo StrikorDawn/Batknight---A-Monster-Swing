@@ -1,12 +1,8 @@
-extends CharacterBody2D
-
-class_name goblin_enemy
+extends EnemyClass
+class_name GoblinMelee
 
 const speed = 50
 var is_goblin_chase: bool = true
-
-var health = 80
-var health_max = 80
 var health_min = 0
 
 var dead: bool = false
@@ -16,12 +12,13 @@ var is_dealing_damage: bool = false
 
 var dir: Vector2
 const gravity = 900
-var knockback_force = 200
+var knockback_force = -20
 var is_roaming: bool = true
 
 var player: CharacterBody2D
 var player_in_area = false
-
+func _ready():
+	set_health(80)
 
 func _process(delta):
 	if !is_on_floor():
@@ -33,7 +30,11 @@ func _process(delta):
 	move(delta)
 	handle_animation()
 	move_and_slide()
-
+	
+func set_health(value):
+	super.set_health(value)
+	health -= 20
+	
 func move(delta):
 	if !dead:
 		if !is_goblin_chase:
@@ -42,6 +43,9 @@ func move(delta):
 			var dir_to_player = position.direction_to(player.position) * speed
 			velocity.x = dir_to_player.x
 			dir.x = abs(velocity.x) / velocity.x
+		elif taking_damage:
+			var knockback_dir = position.direction_to(player.position) * knockback_force
+			velocity.x = knockback_dir.x
 		is_roaming = true
 	elif dead:
 		velocity.x = 0
@@ -76,3 +80,17 @@ func _on_direction_timer_timeout() -> void:
 func choose(array):
 	array.shuffle()
 	return array.front()
+
+
+func _on_goblin_melee_hitbox_area_entered(area: Area2D) -> void:
+	#var damage = (Player Damage)
+	#if area == (Player Damage Zone)
+		#take_damage(damage)
+#func take_damage(damage):
+	#health -= damage
+	#taking_damage = true
+	#if health <= health_min:
+		#health = health_min
+		#dead = true
+	#print(str(self), "current health is ", health)
+	pass # Replace with function body.

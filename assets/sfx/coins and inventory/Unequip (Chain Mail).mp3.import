@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1wstfy66tgar"
+path="res://.godot/imported/Unequip (Chain Mail).mp3-30c6e0fa94c08c48890da35f7fecb77f.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/coins and inventory/Unequip (Chain Mail).mp3"
+dest_files=["res://.godot/imported/Unequip (Chain Mail).mp3-30c6e0fa94c08c48890da35f7fecb77f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

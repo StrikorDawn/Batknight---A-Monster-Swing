@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crwi3rcaxbppa"
+path="res://.godot/imported/Spell - Fear 1.mp3-ef209b1ddf2a5fab816dca447933a2d8.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/spells/Spell - Fear 1.mp3"
+dest_files=["res://.godot/imported/Spell - Fear 1.mp3-ef209b1ddf2a5fab816dca447933a2d8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

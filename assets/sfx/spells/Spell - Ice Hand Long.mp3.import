@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ch27bfug6qbtq"
+path="res://.godot/imported/Spell - Ice Hand Long.mp3-f18a82fa183e49184ec3a369d4eb39df.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/spells/Spell - Ice Hand Long.mp3"
+dest_files=["res://.godot/imported/Spell - Ice Hand Long.mp3-f18a82fa183e49184ec3a369d4eb39df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

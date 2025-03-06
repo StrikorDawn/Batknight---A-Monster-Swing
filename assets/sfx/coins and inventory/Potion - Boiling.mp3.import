@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c4dir8muxngge"
+path="res://.godot/imported/Potion - Boiling.mp3-4003ef3fdb2fae8076c72bb52e444c95.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/coins and inventory/Potion - Boiling.mp3"
+dest_files=["res://.godot/imported/Potion - Boiling.mp3-4003ef3fdb2fae8076c72bb52e444c95.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://db2vk6op8fh3d"
+path="res://.godot/imported/Dog Growl 5.mp3-46999362ef699ffef6d40a39998b484a.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Dog Growl 5.mp3"
+dest_files=["res://.godot/imported/Dog Growl 5.mp3-46999362ef699ffef6d40a39998b484a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

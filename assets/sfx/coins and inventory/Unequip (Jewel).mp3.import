@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buf3gxqu12aj1"
+path="res://.godot/imported/Unequip (Jewel).mp3-3478db865cad09b5a44d0f629e68e311.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/coins and inventory/Unequip (Jewel).mp3"
+dest_files=["res://.godot/imported/Unequip (Jewel).mp3-3478db865cad09b5a44d0f629e68e311.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
