@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4enr67ta3dcq"
+path="res://.godot/imported/Spell - Heal 1.mp3-9ea3625f51b9d0e0abf8edc89fc7fb62.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/spells/Spell - Heal 1.mp3"
+dest_files=["res://.godot/imported/Spell - Heal 1.mp3-9ea3625f51b9d0e0abf8edc89fc7fb62.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

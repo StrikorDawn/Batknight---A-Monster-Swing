@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5r7t1xqrqx0t"
+path="res://.godot/imported/Arrow 2.mp3-6c97ed6669f6c82b72ea408259b890c7.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/weapons and impacts/Arrow 2.mp3"
+dest_files=["res://.godot/imported/Arrow 2.mp3-6c97ed6669f6c82b72ea408259b890c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

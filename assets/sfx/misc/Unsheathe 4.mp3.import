@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsdvqo30walu8"
+path="res://.godot/imported/Unsheathe 4.mp3-34c8da2808db327fcb01b2bbf5884cb3.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/misc/Unsheathe 4.mp3"
+dest_files=["res://.godot/imported/Unsheathe 4.mp3-34c8da2808db327fcb01b2bbf5884cb3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

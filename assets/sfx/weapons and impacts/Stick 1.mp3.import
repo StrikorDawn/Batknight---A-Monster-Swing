@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bdh54dp8n7ioe"
+path="res://.godot/imported/Stick 1.mp3-e6c2e8480d2ab730c2c337cc33169648.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/weapons and impacts/Stick 1.mp3"
+dest_files=["res://.godot/imported/Stick 1.mp3-e6c2e8480d2ab730c2c337cc33169648.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,5 +1,6 @@
 extends Node2D
 
+#signal for play button pressed
 signal play
 
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
@@ -25,6 +26,10 @@ func main_menu():
 	pass
 	#returns player to the main menu
 	#if we can figure out how to save game files ask player to save first
+
+func canvas_visible():
+	canvas_layer.visible != canvas_layer.visible
+
 
 func _on_play_pressed() -> void:
 	play.emit()

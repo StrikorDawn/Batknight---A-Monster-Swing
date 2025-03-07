@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b528p0a70ju0j"
+path="res://.godot/imported/Sword 1.mp3-a409ad6776317913c3a0229699d0decd.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/weapons and impacts/Sword 1.mp3"
+dest_files=["res://.godot/imported/Sword 1.mp3-a409ad6776317913c3a0229699d0decd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

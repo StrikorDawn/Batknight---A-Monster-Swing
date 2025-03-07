@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5oxqhegu4dav"
+path="res://.godot/imported/Eagle.mp3-3588e809a7dc33f1e333108b00a4db90.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/beasts and animals/Eagle.mp3"
+dest_files=["res://.godot/imported/Eagle.mp3-3588e809a7dc33f1e333108b00a4db90.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

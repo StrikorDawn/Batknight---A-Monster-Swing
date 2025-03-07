@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3i8sk5sqntyy"
+path="res://.godot/imported/Bow 3.mp3-471a111ca3d077a3224cb13e54dfeda1.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/weapons and impacts/Bow 3.mp3"
+dest_files=["res://.godot/imported/Bow 3.mp3-471a111ca3d077a3224cb13e54dfeda1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

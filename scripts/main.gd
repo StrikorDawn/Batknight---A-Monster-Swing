@@ -78,7 +78,7 @@ func _on_bat_thrown(spawn_point, is_on_right):
 			bat.rotation = 0
 			bat.throw_direction = true
 		elif is_on_right == false:
-			bat.rotation = 270
+			bat.rotation = 180
 			bat.throw_direction = false
 			
 		bat.position = spawn_point
