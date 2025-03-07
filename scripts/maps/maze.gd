@@ -18,6 +18,10 @@ func _on_button_pressed() -> void:
 #Navigation
 
 func _on_to_boss_room_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"): #only the player can trigger the next level
+	
+	if body.is_in_group("Player"):
+		print("in body")
 		boss_room.emit()
+		GameManager.publish("create scene")
+		
 	

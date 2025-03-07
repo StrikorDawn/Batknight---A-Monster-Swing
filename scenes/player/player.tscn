@@ -1,6 +1,6 @@
 [gd_scene load_steps=47 format=3 uid="uid://qgg20fyvktk7"]
 
-[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_aoqmc"]
+[ext_resource type="Script" uid="uid://cyig3aiqyuoue" path="res://scripts/player/player.gd" id="1_aoqmc"]
 [ext_resource type="Texture2D" uid="uid://48ulvy6rijdf" path="res://assets/sprites/player/ATTACK 1.png" id="2_063av"]
 [ext_resource type="Texture2D" uid="uid://cl43hcmadg014" path="res://assets/sprites/player/HURT.png" id="2_xu1h8"]
 [ext_resource type="Texture2D" uid="uid://0hqr6rx445ir" path="res://assets/sprites/player/IDLE.png" id="4_vl6bc"]
@@ -316,7 +316,8 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+light_mask = 9
 scale = Vector2(4.5, 4.5)
 collision_mask = 3
 script = ExtResource("1_aoqmc")
