@@ -135,6 +135,3 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 
 	# Add a Camera2D as a child to the player
 	player.add_child(Camera2D.new())
-
-	# Connect the player's bat_thrown signal
-	player.bat_thrown.connect(_on_bat_thrown)
