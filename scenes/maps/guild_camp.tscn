@@ -114,11 +114,11 @@ texture = ExtResource("1_lfqax")
 14:4/0 = 0
 14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8)
 15:4/0 = 0
-15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7.02348, 8, -7.02348, 8, 8, -8, 8)
 16:4/0 = 0
-16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7.02348, 8, -7.02348, 8, 8, -8, 8)
 17:4/0 = 0
-17:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, -8, 8)
+17:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -7.02348, 8, 8, -8, 8)
 18:4/0 = 0
 18:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
 19:4/0 = 0
@@ -490,8 +490,8 @@ scale = Vector2(2.95964, 2.95964)
 texture = ExtResource("1_r2gjj")
 
 [node name="ShopV2" type="Sprite2D" parent="."]
-position = Vector2(356, -88)
-scale = Vector2(1.65, 1.65)
+position = Vector2(333, -62)
+scale = Vector2(1.17054, 1.17054)
 texture = ExtResource("3_7uew7")
 
 [node name="Greg" type="Sprite2D" parent="."]
@@ -509,8 +509,7 @@ scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_16ioo")
 
 [node name="Player" parent="." instance=ExtResource("2_iopj1")]
-position = Vector2(-131, -52)
-scale = Vector2(4.5, 4.5)
+position = Vector2(-100, -46)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
