@@ -1,10 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnpsnrh55vejd"]
+[gd_scene load_steps=22 format=3 uid="uid://bnpsnrh55vejd"]
 
-[ext_resource type="Script" uid="uid://bm718g8sxct5v" path="res://scripts/enemies/enemy_melee.gd" id="1_vhkee"]
+[ext_resource type="Script" uid="uid://bm718g8sxct5v" path="res://scripts/enemies/goblin.gd" id="1_vhkee"]
 [ext_resource type="Texture2D" uid="uid://c35mhjkpfsrv4" path="res://assets/sprits/Goblin/goblin_placeholder_spritesheet.png" id="2_mv1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hec2u"]
-size = Vector2(28, 50)
+size = Vector2(28, 46)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lsmo"]
 atlas = ExtResource("2_mv1mu")
@@ -30,9 +30,13 @@ region = Rect2(64, 256, 64, 64)
 atlas = ExtResource("2_mv1mu")
 region = Rect2(128, 256, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2qy3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kfvs"]
 atlas = ExtResource("2_mv1mu")
-region = Rect2(384, 256, 64, 64)
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2spfa"]
+atlas = ExtResource("2_mv1mu")
+region = Rect2(256, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0un66"]
 atlas = ExtResource("2_mv1mu")
@@ -42,17 +46,9 @@ region = Rect2(0, 256, 64, 64)
 atlas = ExtResource("2_mv1mu")
 region = Rect2(64, 256, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kw13k"]
-atlas = ExtResource("2_mv1mu")
-region = Rect2(384, 256, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecsxd"]
 atlas = ExtResource("2_mv1mu")
 region = Rect2(0, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lrefg"]
-atlas = ExtResource("2_mv1mu")
-region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i2pnc"]
 atlas = ExtResource("2_mv1mu")
@@ -86,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4mue8")
 }],
-"loop": false,
+"loop": true,
 "name": &"deal_damage",
 "speed": 5.0
 }, {
@@ -101,21 +97,12 @@ animations = [{
 "texture": SubResource("AtlasTexture_anhd2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v2qy3")
+"texture": SubResource("AtlasTexture_0kfvs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_anhd2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2qy3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_anhd2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2qy3")
+"texture": SubResource("AtlasTexture_2spfa")
 }],
-"loop": false,
+"loop": true,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -125,26 +112,14 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_flcot")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kw13k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_flcot")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kw13k")
 }],
-"loop": false,
+"loop": true,
 "name": &"hurt",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ecsxd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lrefg")
 }],
 "loop": true,
 "name": &"idle",
@@ -172,29 +147,26 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6hab"]
-size = Vector2(32.7251, 55)
+size = Vector2(32.7251, 49.0877)
 
 [node name="GoblinMelee" type="CharacterBody2D"]
 script = ExtResource("1_vhkee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
-scale = Vector2(2, 2)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_hec2u")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(0, 1)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_noti2")
-animation = &"walk"
-autoplay = "idle"
+animation = &"idle"
+frame_progress = 0.48532
 
 [node name="DirectionTimer" type="Timer" parent="."]
 
 [node name="GoblinMeleeHitbox" type="Area2D" parent="."]
-scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinMeleeHitbox"]
-position = Vector2(0, -0.500001)
+position = Vector2(0, 0.791736)
 shape = SubResource("RectangleShape2D_t6hab")
 
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]

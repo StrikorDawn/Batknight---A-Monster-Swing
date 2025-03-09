@@ -25,13 +25,7 @@ window/stretch/aspect="expand"
 
 [file_customization]
 
-folder_colors={
-"res://assets/buttons/": "blue",
-"res://assets/sounds/": "blue",
-"res://assets/sprits/": "blue",
-"res://scenes/maps/": "blue",
-"res://scenes/maps/map_bases/": "blue"
-}
+folder_colors={}
 
 [global_group]
 

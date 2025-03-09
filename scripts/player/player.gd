@@ -73,6 +73,7 @@ func _ready():
 	states["Fall"] = FallState.new()
 	states["Throw"] = ThrowState.new()
 	states["Dash"] = DashState.new()
+	states["Melee"] = MeleeState.new()
 
 	# Assign player reference to each state
 	for state in states.values():
