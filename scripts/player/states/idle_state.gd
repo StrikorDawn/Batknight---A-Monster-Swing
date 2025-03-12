@@ -19,3 +19,6 @@ func do_physics_process(_delta: float) -> void:
 		
 	elif Input.is_action_just_pressed("throw"):
 		player.set_state(player.states["Throw"])
+
+	elif Input.is_action_just_pressed("melee"):
+		player.set_state(player.states["Melee"])

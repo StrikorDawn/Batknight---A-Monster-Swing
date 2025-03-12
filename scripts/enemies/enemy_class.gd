@@ -1,129 +1,140 @@
-extends CharacterBody2D  # Inherits from CharacterBody2D for movement and physics
-class_name EnemyClass  # Ensures this is recognized as a class that can be inherited from
+extends CharacterBody2D
+class_name EnemyClass
 
 ######################################
-# Custom Signals
+# Custom Signals & Core Variables
 ######################################
-signal enemy_defeated  # Signal emitted when the enemy is defeated
+signal enemy_defeated
+
+# Core Attributes – these are set using our setter methods
+var health: float
+var max_health: float
+var move_speed: float
+var damage: float
+var attack_cooldown: float
+var gravity: float = 1000.0  # Standard gravity; for agile enemies you might add jump/fall physics later
+var loot_drop: int = 0
+
+# For future agile enemy support, you might add these later:
+# @export var jump_height: float = 200.0
+# @export var jump_time_to_peak: float = 0.5
+# @export var jump_time_to_descent: float = 0.7
+
+# State machine variables
+var states = {}  # Dictionary to hold state objects
+var current_state = null
+
+# Node references
+var animated_sprite: AnimatedSprite2D
+var invincibility_timer: Timer
+
+# Invincibility flag
+var invincible: bool = false
 
 ######################################
-# Node References
-######################################
-var animated_sprite : AnimatedSprite2D  # Animated sprite for enemy animations
-
-######################################
-# Enemy Variables
-######################################
-var health : float  # Current health of the enemy
-var max_health : float  # Maximum health of the enemy
-var move_speed : float  # Movement speed of the enemy
-var damage : float  # Damage dealt by the enemy
-var direction  # Direction of movement (custom logic needed)
-var attack_cooldown : float  # Time between attacks (custom logic needed)
-var gravity : float = 1000.0  # Gravity applied to the enemy
-var loot_drop : int = 0  # Loot to be dropped upon death (replace with actual loot logic)
-
-######################################
-# Enemy State
-######################################
-var is_alive : bool = true  # Flag indicating if the enemy is alive
-var is_hit : bool = false
-var i_frames : float = 1.0  # Time in seconds the enemy is invincible after being hit
-var invincible : bool = false  # Flag to check if the enemy is in invincibility state
-var invincibility_timer : Timer  # Timer node to handle invincibility duration
-
-######################################
-# Enemy Setters
-######################################
-func set_health(value: float):
-	max_health = value
-	health = max_health
-
-func set_move_speed(value : float):
-	move_speed = value
-
-func set_damage(value: float):
-	damage = value
-
-func set_animated_sprite(sprite : AnimatedSprite2D):
-	animated_sprite = sprite
-######################################
-# Ready Function (Initialization)
+# Initialization
 ######################################
 func _ready():
-	add_to_group("Enemy")  # Add enemy to group for easier management
-	invincibility_timer = Timer.new()  # Create timer node for invincibility
-	invincibility_timer.one_shot = true  # Set timer to stop after one cycle
-	invincibility_timer.connect("timeout", _on_invincibility_timeout)  # Connect timer to callback
-	add_child(invincibility_timer)  # Add timer as a child to this enemy
+	add_to_group("Enemy")
+	
+	# Set up node references (assumes an AnimatedSprite2D child exists)
+	animated_sprite = $AnimatedSprite2D
+	
+	# Create and configure the invincibility timer
+	invincibility_timer = Timer.new()
+	invincibility_timer.one_shot = true
+	invincibility_timer.connect("timeout", _on_invincibility_timeout)
+	add_child(invincibility_timer)
+	
+	# Instantiate state objects and store them in a dictionary
+	states["Idle"]    = preload("res://scripts/enemies/states/idle_state.gd").new()
+	states["Alert"]   = preload("res://scripts/enemies/states/alert_state.gd").new()
+	states["Chasing"] = preload("res://scripts/enemies/states/chasing_state.gd").new()
+	states["Attack"]  = preload("res://scripts/enemies/states/attack_state.gd").new()
+	
+	# Assign this enemy instance to each state (like your player setup)
+	for state in states.values():
+		state.enemy = self
+	
+	# Set default randomized attributes (subclasses can override these later)
+	set_health(100, 20)           # Base health of 100 with ±20 variance
+	set_move_speed(50, 10)        # Base move speed of 50 with ±10 variance
+	set_damage(10, 3)             # Base damage of 10 with ±3 variance
+	set_attack_cooldown(1.5, 0.5)   # Base attack cooldown of 1.5 sec with ±0.5 sec variance
+	
+	# Start in the Idle state
+	change_state("Idle")
 
 ######################################
-# Enemy Movement Logic
+# State Management
 ######################################
-func _physics_process(delta):
-	if is_alive:
-		velocity.y += gravity * delta  # Apply gravity to the velocity (Y component)
-		do_move(delta)  # Custom movement logic, can be overridden in subclasses
-		move_and_slide()  # Move and slide with the calculated velocity
-		handle_animation()  # Handle animations based on current state
-
-# Custom move logic (to be implemented in subclasses)
-func do_move(_delta: float):
-	pass  # Subclasses will override this for specific movement behavior
+func change_state(new_state_name: String):
+	if current_state:
+		current_state.exit_state()
+	current_state = states[new_state_name]
+	current_state.enter_state(self)
 
 ######################################
-# Enemy Animation Handling
+# Physics & Process
 ######################################
-func handle_animation():
-	pass  # Handle animations (e.g., idle, walk, attack, etc.) based on current state
+func _physics_process(delta: float) -> void:
+	if is_alive():
+		# Let the current state handle physics-related behavior
+		if current_state:
+			current_state.physics_process(delta)
+		
+		# Apply common physics: update velocity with gravity
+		velocity.y += gravity * delta
+		
+		# move_and_slide() in Godot 4 automatically uses the built-in velocity property
+		move_and_slide()
+		
+		# Handle common animations (or delegate to states)
+		handle_animation()
+
+func _process(delta: float) -> void:
+	if is_alive() and current_state:
+		current_state.process(delta)
 
 ######################################
-# Enemy Battle Logic
+# Combat & Utility Methods
 ######################################
-# Handle taking damage and starting death sequence
-func take_damage(amount: float):
-	if is_alive and not invincible:  # Check if the enemy is alive and not invincible
-		is_hit = true
+func take_damage(amount: float) -> void:
+	if is_alive() and not invincible:
 		health -= amount
-		health = max(health, 0)  # Prevent negative health
-		print(health)
+		health = max(health, 0)
 		if health <= 0:
-			die()  # Call die() method when health reaches zero
+			die()
 		else:
-			invincible = true  # Set invincible to true after taking damage
-			invincibility_timer.start(i_frames)  # Start the invincibility timer
-	else:
-		print("Enemy is Invincible")
+			invincible = true
+			invincibility_timer.start(1.0)  # Adjust invincibility duration as needed
 
-func attack(_target: Node):
-	pass  # To be overridden in subclasses for specific attack logic
+func die() -> void:
+	emit_signal("enemy_defeated")
+	queue_free()
 
-# Handle enemy death
-func die():
-	is_alive = false  # Set enemy to dead state
-	drop_loot()  # Drop loot when the enemy dies
-	start_death_sequence()  # Trigger the death sequence (e.g., animations, effects)
+func handle_animation() -> void:
+	# Implement common animation handling here or delegate to states
+	pass
 
-# Loot dropping logic
-func drop_loot():
-	if loot_drop > 0:
-		print("Loot dropped!")  # Replace with actual loot logic
-		# Example: spawn a loot item in the world
-		#var loot = LootItem.new()  # Assuming you have a LootItem class
-		#get_parent().add_child(loot)  # Add loot to the scene
+func is_alive() -> bool:
+	return health > 0
 
-# Death sequence logic
-func start_death_sequence():
-	if is_alive:
-		return  # If still alive, do nothing
-	else:
-		print("Enemy death sequence triggered!")  # Custom death handling (e.g., animation or effects)
-		animated_sprite.play("death")
-		await animated_sprite.animation_finished
-		emit_signal("enemy_defeated")  # Emit signal when enemy is defeated
-		queue_free()  # Or trigger animation instead
+func _on_invincibility_timeout() -> void:
+	invincible = false
 
-# Callback for when the invincibility timer expires
-func _on_invincibility_timeout():
-	invincible = false  # End invincibility
-	print("Vincible")
+######################################
+# Setter Methods with Randomization Support
+######################################
+func set_health(base_value: float, variance: float = 0.0) -> void:
+	max_health = max(base_value + randf_range(-variance, variance), 1)
+	health = max_health
+
+func set_move_speed(base_value: float, variance: float = 0.0) -> void:
+	move_speed = max(base_value + randf_range(-variance, variance), 0)
+
+func set_damage(base_value: float, variance: float = 0.0) -> void:
+	damage = max(base_value + randf_range(-variance, variance), 0)
+
+func set_attack_cooldown(base_value: float, variance: float = 0.0) -> void:
+	attack_cooldown = max(base_value + randf_range(-variance, variance), 0.1)

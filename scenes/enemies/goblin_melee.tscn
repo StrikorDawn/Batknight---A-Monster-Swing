@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bnpsnrh55vejd"]
 
-[ext_resource type="Script" uid="uid://bm718g8sxct5v" path="res://scripts/enemies/enemy_melee.gd" id="1_vhkee"]
+[ext_resource type="Script" uid="uid://bm718g8sxct5v" path="res://scripts/enemies/subclasses/enemy_melee.gd" id="1_vhkee"]
 [ext_resource type="Texture2D" uid="uid://c35mhjkpfsrv4" path="res://assets/sprits/Goblin/goblin_placeholder_spritesheet.png" id="2_mv1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hec2u"]
@@ -175,6 +175,7 @@ animations = [{
 size = Vector2(32.7251, 55)
 
 [node name="GoblinMelee" type="CharacterBody2D"]
+collision_layer = 8
 script = ExtResource("1_vhkee")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -192,6 +193,8 @@ autoplay = "idle"
 
 [node name="GoblinMeleeHitbox" type="Area2D" parent="."]
 scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinMeleeHitbox"]
 position = Vector2(0, -0.500001)

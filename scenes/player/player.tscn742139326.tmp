@@ -320,7 +320,7 @@ animations = [{
 size = Vector2(62.49, 83)
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_aoqmc")
 move_speed = 400
 dash_speed = null
@@ -333,7 +333,7 @@ fall_clamp = null
 
 [node name="BatSpawnPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(56, 0)
+position = Vector2(22.51, 0)
 gizmo_extents = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -365,8 +365,8 @@ wait_time = 0.5
 
 [node name="AttackArea" type="Area2D" parent="."]
 position = Vector2(22.51, 0)
-collision_layer = 2
-collision_mask = 8
+scale = Vector2(1, 1)
+collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(31.49, 0)

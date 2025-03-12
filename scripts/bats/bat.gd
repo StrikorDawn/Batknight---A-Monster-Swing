@@ -24,6 +24,7 @@ func _ready() -> void:
 	spin_timer.start()
 	throw_bat_logic()
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	if is_spinning == true:
