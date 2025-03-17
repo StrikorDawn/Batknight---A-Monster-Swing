@@ -27,11 +27,11 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://assets/Buttons/": "blue",
-"res://assets/Sounds/": "blue",
-"res://assets/Sprits/": "blue",
-"res://scenes/Maps/": "blue",
-"res://scenes/Maps/MapBases/": "blue"
+"res://assets/buttons/": "blue",
+"res://assets/sounds/": "blue",
+"res://assets/sprits/": "blue",
+"res://scenes/maps/": "blue",
+"res://scenes/maps/map_bases/": "blue"
 }
 
 [global_group]

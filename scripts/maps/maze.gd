@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu: Node2D = $"Pause Menu"
+#@onready var pause_menu: Node2D = $"Pause Menu"
 
 signal boss_room
 
@@ -17,12 +17,12 @@ func reload_maze():
 func _on_button_pressed() -> void:
 	get_tree().paused = true
 	$TileMap.visible = false
-	show_pause()
+	#show_pause()
 	
-func show_pause():
-	pause_menu.visible = true
-	pause_menu.canvas_visible()
-	$Player/Camera2D.enabled = false
+#func show_pause():
+	#pause_menu.visible = true
+	#pause_menu.canvas_visible()
+	#$Player/Camera2D.enabled = false
 	#turn on visibility for pause menu 
 	#check to make sure you cant press buttons while menu is invisible 
 

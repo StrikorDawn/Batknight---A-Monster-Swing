@@ -1,23 +1,10 @@
 [gd_scene load_steps=47 format=3 uid="uid://qgg20fyvktk7"]
 
 [ext_resource type="Script" uid="uid://bw1tqycbkhfl4" path="res://scripts/player/player.gd" id="1_aoqmc"]
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://48ulvy6rijdf" path="res://assets/sprites/player/ATTACK 1.png" id="2_063av"]
-[ext_resource type="Texture2D" uid="uid://cl43hcmadg014" path="res://assets/sprites/player/HURT.png" id="2_xu1h8"]
-[ext_resource type="Texture2D" uid="uid://0hqr6rx445ir" path="res://assets/sprites/player/IDLE.png" id="4_vl6bc"]
-[ext_resource type="Texture2D" uid="uid://d2keu6x4kihe0" path="res://assets/sprites/player/RUN.png" id="5_fnxm2"]
-=======
-=======
->>>>>>> Stashed changes
-[ext_resource type="Texture2D" uid="uid://48ulvy6rijdf" path="res://assets/Sprits/Player/ATTACK 1.png" id="2_063av"]
-[ext_resource type="Texture2D" uid="uid://cl43hcmadg014" path="res://assets/Sprits/Player/HURT.png" id="2_xu1h8"]
-[ext_resource type="Texture2D" uid="uid://0hqr6rx445ir" path="res://assets/Sprits/Player/IDLE.png" id="4_vl6bc"]
-[ext_resource type="Texture2D" uid="uid://d2keu6x4kihe0" path="res://assets/Sprits/Player/RUN.png" id="5_fnxm2"]
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+[ext_resource type="Texture2D" uid="uid://48ulvy6rijdf" path="res://assets/sprits/Player/ATTACK 1.png" id="2_063av"]
+[ext_resource type="Texture2D" uid="uid://cl43hcmadg014" path="res://assets/sprits/Player/HURT.png" id="2_xu1h8"]
+[ext_resource type="Texture2D" uid="uid://0hqr6rx445ir" path="res://assets/sprits/Player/IDLE.png" id="4_vl6bc"]
+[ext_resource type="Texture2D" uid="uid://d2keu6x4kihe0" path="res://assets/sprits/Player/RUN.png" id="5_fnxm2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amq37"]
 radius = 5.0
@@ -366,8 +353,6 @@ wait_time = 0.25
 
 [node name="DashCoolDown" type="Timer" parent="Dash"]
 wait_time = 0.5
-
-[node name="PlayerCam" type="Camera2D" parent="."]
 
 [connection signal="timeout" from="Dash/DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash/DashCoolDown" to="." method="_on_dash_cool_down_timeout"]
