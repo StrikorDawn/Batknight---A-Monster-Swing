@@ -4,15 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
 [ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_iopj1"]
 [ext_resource type="Texture2D" uid="uid://dkw2unpyl6yb2" path="res://assets/objects/Shop.png.png" id="3_bi61k"]
 [ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/sprits/NPCs/Greg.png" id="4_r1788"]
 =======
+=======
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://cwr4snn4aahy3" path="res://assets/objects/ShopV2.png" id="3_7uew7"]
 [ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/Sprits/NPCs/Greg.png" id="4_r1788"]
 [ext_resource type="Texture2D" uid="uid://38lo2qq8nqw5" path="res://assets/sprites/player/PlayerConceptV1.1.png" id="7_b6l8a"]
 [ext_resource type="Texture2D" uid="uid://dgok4p6fkp0rj" path="res://assets/sprites/player/ConceptPlayerV1.2.png" id="8_nadx6"]
 [ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/NPCs/greg.tscn" id="9_nsvp3"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf2ps"]
@@ -520,6 +526,7 @@ scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_16ioo")
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource("2_iopj1")]
 position = Vector2(-131, -52)
 scale = Vector2(4.5, 4.5)
@@ -527,6 +534,8 @@ scale = Vector2(4.5, 4.5)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.5, 1.5)
 
+=======
+>>>>>>> Stashed changes
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-131, -140)
 =======
@@ -549,4 +558,7 @@ light_mask = 0
 z_index = -2
 position = Vector2(1068, -10)
 scale = Vector2(1.28254, 1.28254)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -1,7 +1,11 @@
 [gd_scene load_steps=6 format=4 uid="uid://c24507ky4oc6"]
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://dg8q3x683j17t" path="res://scripts/maps/maze.gd" id="1_wjeuv"]
+=======
+[ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/Maps/maze.gd" id="1_wjeuv"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/Maps/maze.gd" id="1_wjeuv"]
 >>>>>>> Stashed changes
@@ -285,7 +289,11 @@ text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 position = Vector2(-640, 1664)
+=======
+position = Vector2(6912, 1130)
+>>>>>>> Stashed changes
 =======
 position = Vector2(6912, 1130)
 >>>>>>> Stashed changes

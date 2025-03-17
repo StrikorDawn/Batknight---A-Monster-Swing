@@ -6,14 +6,20 @@ extends Node
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 =======
+=======
+>>>>>>> Stashed changes
 const PLAYER = preload("res://scenes/player/player.tscn")
 
 func load_new_scene(new_scene, current_scene): #set it up to pass the new scene through the 
 	#print("print")
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 	
 	var map = current_scene
