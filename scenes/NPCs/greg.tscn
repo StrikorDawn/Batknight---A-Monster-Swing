@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci88fr8vwy74s"]
+
+[ext_resource type="Script" uid="uid://dvihy82wt05ip" path="res://scripts/NPC's/greg.gd" id="1_i8u5i"]
+[ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/Sprits/NPCs/Greg.png" id="2_wb23x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr3ip"]
+size = Vector2(27.6662, 21.8569)
+
+[node name="Greg" type="Area2D"]
+script = ExtResource("1_i8u5i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -6)
+scale = Vector2(6.67941, 6.15676)
+shape = SubResource("RectangleShape2D_lr3ip")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wb23x")
+
+[node name="ToMaze" type="Button" parent="."]
+visible = false
+light_mask = 0
+offset_left = -50.0
+offset_top = -105.0
+offset_right = 46.0
+offset_bottom = -74.0
+text = "Go to maze"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="ToMaze" to="." method="_on_to_maze_pressed"]

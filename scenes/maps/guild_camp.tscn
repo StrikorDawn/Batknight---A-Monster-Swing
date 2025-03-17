@@ -3,9 +3,17 @@
 [ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
 [ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_iopj1"]
 [ext_resource type="Texture2D" uid="uid://dkw2unpyl6yb2" path="res://assets/objects/Shop.png.png" id="3_bi61k"]
 [ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/sprits/NPCs/Greg.png" id="4_r1788"]
+=======
+[ext_resource type="Texture2D" uid="uid://cwr4snn4aahy3" path="res://assets/objects/ShopV2.png" id="3_7uew7"]
+[ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/Sprits/NPCs/Greg.png" id="4_r1788"]
+[ext_resource type="Texture2D" uid="uid://38lo2qq8nqw5" path="res://assets/sprites/player/PlayerConceptV1.1.png" id="7_b6l8a"]
+[ext_resource type="Texture2D" uid="uid://dgok4p6fkp0rj" path="res://assets/sprites/player/ConceptPlayerV1.2.png" id="8_nadx6"]
+[ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/NPCs/greg.tscn" id="9_nsvp3"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf2ps"]
 texture = ExtResource("1_lfqax")
@@ -478,8 +486,10 @@ texture = ExtResource("1_lfqax")
 sources/0 = SubResource("TileSetAtlasSource_1bnlc")
 
 [node name="GuildCamp" type="Node2D"]
+z_index = -1
 
 [node name="SkyBg" type="Sprite2D" parent="."]
+z_index = -585
 position = Vector2(286.25, -1444)
 scale = Vector2(9.22409, 9.22409)
 texture = ExtResource("1_7uew7")
@@ -495,6 +505,7 @@ scale = Vector2(5.15625, 5.15625)
 texture = ExtResource("3_bi61k")
 
 [node name="Greg" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1068, -2.00001)
 scale = Vector2(1.21875, 1.21875)
 texture = ExtResource("4_r1788")
@@ -508,6 +519,7 @@ tile_set = SubResource("TileSet_1xc01")
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_16ioo")
 
+<<<<<<< Updated upstream
 [node name="Player" parent="." instance=ExtResource("2_iopj1")]
 position = Vector2(-131, -52)
 scale = Vector2(4.5, 4.5)
@@ -517,3 +529,24 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-131, -140)
+=======
+[node name="PlayerSpawn" type="Marker2D" parent="."]
+position = Vector2(-131, -140)
+
+[node name="PlayerConceptV1_1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(61, -50)
+scale = Vector2(0.54386, 0.54386)
+texture = ExtResource("7_b6l8a")
+
+[node name="ConceptPlayerV1_2" type="Sprite2D" parent="."]
+position = Vector2(-75, -51)
+scale = Vector2(0.845395, 0.845395)
+texture = ExtResource("8_nadx6")
+
+[node name="Greg2" parent="." instance=ExtResource("9_nsvp3")]
+light_mask = 0
+z_index = -2
+position = Vector2(1068, -10)
+scale = Vector2(1.28254, 1.28254)
+>>>>>>> Stashed changes

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp1edex5b6t1p"
-path="res://.godot/imported/Greg.png-88abf450060f2313387dd99d90d077ae.ctex"
+path="res://.godot/imported/Greg.png-255c6be51befc2a5f1b41d00a00b573f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprits/NPCs/Greg.png"
-dest_files=["res://.godot/imported/Greg.png-88abf450060f2313387dd99d90d077ae.ctex"]
+source_file="res://assets/Sprits/NPCs/Greg.png"
+dest_files=["res://.godot/imported/Greg.png-255c6be51befc2a5f1b41d00a00b573f.ctex"]
 
 [params]
 

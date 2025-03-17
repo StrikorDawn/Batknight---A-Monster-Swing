@@ -32,8 +32,7 @@ func show_pause():
 func _on_to_boss_room_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Player"):
-		print("in body")
 		boss_room.emit()
-		GameManager.publish("create scene")
+		Main._set_scene()
 		
 	
