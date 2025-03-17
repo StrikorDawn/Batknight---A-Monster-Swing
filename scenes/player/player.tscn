@@ -354,5 +354,7 @@ wait_time = 0.25
 [node name="DashCoolDown" type="Timer" parent="Dash"]
 wait_time = 0.5
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [connection signal="timeout" from="Dash/DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Dash/DashCoolDown" to="." method="_on_dash_cool_down_timeout"]

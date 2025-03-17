@@ -8,8 +8,10 @@ extends Node
 ######################################
 # Preloaded Scenes
 ######################################
+const GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
 const CYCLOPES_MAZE = preload("res://scenes/maps/cyclopes/maze_base.tscn")
 const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/cyclopes/boss_room_base.tscn")
+
 const PLAYER = preload("res://scenes/player/player.tscn")
 const BAT = preload("res://scenes/bat/bat.tscn")
 
@@ -32,7 +34,7 @@ var player_spawn_point
 ######################################
 func _ready() -> void:
 	# Instantiate and add the current scene
-	current_scene = CYCLOPES_MAZE.instantiate()
+	current_scene = GUILD_CAMP.instantiate()
 	add_child(current_scene)
 
 	# Get the player spawn point from the current scene
@@ -48,15 +50,15 @@ func _ready() -> void:
 	add_child(player)
 
 	# Add a Camera2D as a child to the player
-	player.add_child(Camera2D.new())
+	
+	#player.add_child(Camera2D.new())
 
 	# Connect the player's bat_thrown signal
 	player.bat_thrown.connect(_on_bat_thrown)
 	
 	#Connect the to boss room signal
-	var cyclopes_maze = CYCLOPES_MAZE.instantiate()
-	cyclopes_maze.boss_room.connect(_set_scene)
-	GameManager.subscribe("create scene", _set_scene)
+	#var cyclopes_maze = CYCLOPES_MAZE.instantiate()
+	#cyclopes_maze.boss_room.connect(_set_scene)
 	
 
 
@@ -109,23 +111,26 @@ func _on_bat_grabbed():
 	#player.visible = true
 	
 ######################################
-#Navigation?
+#Navigation
 ######################################
 
 func _set_scene():
-	print("set scene")
 	var new_scene = CYCLOPES_BOSS_ROOM
 	load_new_scene(new_scene)
 
 func load_new_scene(new_scene): #set it up to pass the new scene through the 
-	print("print")
+	#print("print")
 	var map = current_scene
 	map.queue_free()
 	
+	
 	current_scene = new_scene.instantiate()
 	var root = get_tree().root 
-	root.add_child(current_scene)
+	add_child(current_scene)
 	
+	if current_scene.is_in_group("boss_rooms"):
+		var boss_cam = current_scene.get_node("Camera2D")
+		boss_cam.make_current()
 	
 	# Get the player spawn point from the current scene
 	player_spawn_point = current_scene.get_node("PlayerSpawn")
@@ -134,4 +139,8 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 	player.position = player_spawn_point.position
 
 	# Add a Camera2D as a child to the player
-	player.add_child(Camera2D.new())
+	#player.add_child(Camera2D.new())
+
+	# Connect the player's bat_thrown signal
+	player.bat_thrown.connect(_on_bat_thrown)
+	#player.add_child(Camera2D.new())
