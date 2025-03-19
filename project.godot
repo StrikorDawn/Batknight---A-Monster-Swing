@@ -17,10 +17,11 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
-GameManager="*res://scripts/game_manager.gd"
+Main="*res://scripts/main.gd"
 
 [display]
 
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [file_customization]
