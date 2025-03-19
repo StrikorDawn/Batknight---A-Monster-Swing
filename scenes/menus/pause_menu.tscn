@@ -1,12 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://byrqkobbi33dk"]
 
-
-[ext_resource type="Script" uid="uid://d1njjcg3y3ryo" path="res://scripts/menus/pause_menu.gd" id="1_dbqwg"]
+[ext_resource type="Script" uid="uid://cv56pv3mkrgav" path="res://scripts/menus/pause_menu.gd" id="1_dbqwg"]
 
 [node name="Pause Menu" type="Node2D"]
 position = Vector2(355, 250)
 scale = Vector2(8.4376, 8.4376)
-
 script = ExtResource("1_dbqwg")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -17,7 +15,6 @@ visible = false
 modulate = Color(0.727884, 0.89094, 1, 1)
 offset_right = 40.0
 offset_bottom = 40.0
-
 scale = Vector2(136.817, 78.2939)
 
 [node name="Play" type="Button" parent="."]

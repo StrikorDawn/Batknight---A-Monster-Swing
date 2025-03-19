@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://c24507ky4oc6"]
 
-[ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/maps/maze.gd" id="1_wjeuv"]
-[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_dwqcc"]
+[ext_resource type="Script" uid="uid://dck6qm2n0kg2y" path="res://scripts/maps/maze.gd" id="1_wjeuv"]
+[ext_resource type="Texture2D" uid="uid://cl2yx48q2pdki" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_dwqcc"]
 [ext_resource type="PackedScene" uid="uid://bnpsnrh55vejd" path="res://scenes/enemies/goblin_melee.tscn" id="3_jflob"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g7q1"]

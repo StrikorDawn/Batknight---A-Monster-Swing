@@ -1,22 +1,26 @@
 extends Node
 class_name EnemyState
 
-# This variable will hold the enemy instance when a state is active.
-var enemy = null
+######################################
+# Enemy Class Reference
+######################################
+var enemy : EnemyClass = null
 
-# Called when the state is entered.
+######################################
+# State Entry
+######################################
 func enter_state(enemy_instance):
 	enemy = enemy_instance
 
-# Called when the state is exited.
+######################################
+# Physics Process (every physics frame)
+######################################
+func do_physics_process(_delta: float) -> void:
+	pass
+
+######################################
+# State Exit
+######################################
 func exit_state():
-	# Perform any necessary cleanup here.
-	pass
-
-# Called every frame (non-physics).
-func process(delta: float) -> void:
-	pass
-
-# Called every physics frame.
-func physics_process(delta: float) -> void:
+	# Cleanup if necessary.
 	pass

@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://dptm87w8bl8xb"]
+[gd_scene load_steps=10 format=4 uid="uid://dptm87w8bl8xb"]
 
-[ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
-[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
-[ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
+[ext_resource type="Texture2D" uid="uid://bif2xyf7jc61t" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
+[ext_resource type="Texture2D" uid="uid://cl2yx48q2pdki" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
+[ext_resource type="Texture2D" uid="uid://cyxjgjyouiar6" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_iopj1"]
-[ext_resource type="Texture2D" uid="uid://dkw2unpyl6yb2" path="res://assets/objects/Shop.png.png" id="3_bi61k"]
-[ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/sprits/NPCs/Greg.png" id="4_r1788"]
+[ext_resource type="Texture2D" uid="uid://x208rpq3ikph" path="res://assets/objects/Shop.png.png" id="3_bi61k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf2ps"]
 texture = ExtResource("1_lfqax")
@@ -497,7 +496,6 @@ texture = ExtResource("3_bi61k")
 [node name="Greg" type="Sprite2D" parent="."]
 position = Vector2(1068, -2.00001)
 scale = Vector2(1.21875, 1.21875)
-texture = ExtResource("4_r1788")
 
 [node name="PhysicalBG" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)

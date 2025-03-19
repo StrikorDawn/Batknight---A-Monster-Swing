@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bisvb6ni6hr37"]
 
-[ext_resource type="Script" uid="uid://bdw5w0244hv4a" path="res://scripts/bats/bat.gd" id="1_5y468"]
-[ext_resource type="Texture2D" uid="uid://2xd5oitw3ttq" path="res://assets/sprites/baseball bats/slugger-bat-gifts.png" id="2_gb2kl"]
+[ext_resource type="Script" uid="uid://ky52ahm8ul6m" path="res://scripts/bats/bat.gd" id="1_5y468"]
+[ext_resource type="Texture2D" uid="uid://4j4kdpwj2du8" path="res://assets/sprites/baseball bats/slugger-bat-gifts.png" id="2_gb2kl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkip"]
 size = Vector2(83.228, 15)
@@ -40,9 +40,9 @@ shape = SubResource("RectangleShape2D_8mkip")
 debug_color = Color(0.757736, 0.185178, 1, 0.42)
 
 [node name="GrabTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 
 [connection signal="timeout" from="SpinTimer" to="." method="_on_spin_timer_timeout"]
-[connection signal="body_entered" from="GrabArea" to="." method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="GrabArea" to="." method="_on_grab_area_entered"]
+[connection signal="body_entered" from="GrabArea" to="." method="_on_enemy_body_entered"]
 [connection signal="timeout" from="GrabTimer" to="." method="_on_grab_timer_timeout"]
