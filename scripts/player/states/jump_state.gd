@@ -21,7 +21,7 @@ func do_physics_process(delta: float) -> void:
 	jump_timer += delta  # Track jump duration
 	
 	direction = set_direction()
-	handle_movement(direction, player.move_speed)
+	handle_movement(player.move_speed)
 	
 	# Jump Cut - Reduces velocity only after the min jump time has passed
 	if not Input.is_action_pressed("jump") and jump_timer > min_jump_time:

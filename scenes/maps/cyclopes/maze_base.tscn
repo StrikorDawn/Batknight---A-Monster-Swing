@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://c24507ky4oc6"]
+[gd_scene load_steps=7 format=4 uid="uid://c24507ky4oc6"]
 
 [ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/Maps/maze.gd" id="1_wjeuv"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_dwqcc"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g7q1"]
 texture = ExtResource("2_dwqcc")
@@ -282,6 +283,9 @@ text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(7038, 1115)
+
+[node name="GoblinMelee" parent="." instance=ExtResource("3_jflob")]
+position = Vector2(346, 1702)
 
 [connection signal="body_entered" from="ToBossRoom" to="." method="_on_to_boss_room_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

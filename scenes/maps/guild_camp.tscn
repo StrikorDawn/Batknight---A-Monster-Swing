@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=12 format=4 uid="uid://dptm87w8bl8xb"]
 
 [ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
@@ -495,6 +496,7 @@ texture = ExtResource("1_r2gjj")
 position = Vector2(374.9, -52)
 scale = Vector2(1.26094, 0.998)
 texture = ExtResource("3_7uew7")
+
 
 [node name="PhysicalBG" type="TileMapLayer" parent="."]
 scale = Vector2(4, 4)

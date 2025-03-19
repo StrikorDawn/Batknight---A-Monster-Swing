@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://b5h7ijeoo64g4"]
 
-[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_l7uau"]
+[ext_resource type="Texture2D" uid="uid://cl2yx48q2pdki" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_l7uau"]
 [ext_resource type="PackedScene" uid="uid://qgg20fyvktk7" path="res://scenes/player/player.tscn" id="2_ncmxl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kh7di"]

@@ -1,8 +1,10 @@
 [gd_scene load_steps=7 format=4 uid="uid://b5h7ijeoo64g4"]
 
+
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_n1ahf"]
 [ext_resource type="Script" uid="uid://28xhrw4u87sc" path="res://scripts/Maps/boss_room_base.gd" id="1_nfa7k"]
 [ext_resource type="Texture2D" uid="uid://c2pd8pewbs7gc" path="res://assets/sprites/cyclops/Cyclops.png" id="3_i70v6"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6433"]
 texture = ExtResource("1_n1ahf")
