@@ -20,6 +20,7 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 @onready var dash_timer: Timer = $Dash/DashTimer
 @onready var dash_cool_down: Timer = $Dash/DashCoolDown
 @onready var bat_spawn_point: Marker2D = %BatSpawnPoint
+@onready var attack_area : Area2D = $AttackArea
 
 ######################################
 # Custom Player Gravity Calculations
@@ -58,14 +59,28 @@ var is_dashing : bool
 var dash_available : bool = true
 
 ######################################
+# Enemy Tracking Variables
+######################################
+var attack_area_enemies: Array = []
+
+######################################
 # Player State Variables
 ######################################
 var states = {}
 var current_state: PlayerState
 
+######################################
+# Initialization
+######################################
 func _ready():
 	add_to_group("Player")
-	
+	attack_area.monitoring = false
+	attack_area.visible = false
+
+	# Connect attack area signals for enemy tracking
+	attack_area.body_entered.connect(_on_attack_area_body_entered)
+	attack_area.body_exited.connect(_on_attack_area_body_exited)
+
 	# Create and store state instances
 	states["Idle"] = IdleState.new()
 	states["Run"] = RunState.new()
@@ -93,15 +108,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("left"):
 		is_facing_right = false
 		bat_spawn_point.position.x = -56
+		attack_area.position.x = -23
+		attack_area.rotation_degrees = 180
 	elif Input.is_action_just_pressed("right"):
-		bat_spawn_point.position.x = 56
 		is_facing_right = true
+		bat_spawn_point.position.x = 56
+		attack_area.position.x = 23
+		attack_area.rotation_degrees = 0 
 	
 	on_floor_now = is_on_floor() # Marks if player was on floor 
 	
 	# If we were on the floor but now we are not, start coyote time
 	if was_on_floor and not on_floor_now:
-		start_coyote_time()	
+		start_coyote_time()    
 		
 	was_on_floor = on_floor_now  # Update floor tracking
 	
@@ -116,6 +135,20 @@ func set_state(new_state: PlayerState):
 		current_state.exit_state() # Finalizes current state
 	current_state = new_state
 	current_state.enter_state() # Initiates new state start up
+
+######################################
+# Enemy Detection in Attack Area
+######################################
+func _on_attack_area_body_entered(body):
+	if body.is_in_group("Enemies"):
+		attack_area_enemies.append(body)
+
+func _on_attack_area_body_exited(body):
+	if body.is_in_group("Enemies"):
+		attack_area_enemies.erase(body)
+
+func is_enemy_in_attack_area() -> bool:
+	return attack_area_enemies.size() > 0
 
 ######################################
 # Allows for non pixel perfect jumps
@@ -141,7 +174,7 @@ func start_jump_buffer():
 	jump_buffer_timer.start(jump_buffer_time)
 
 ######################################
-# Ensures no uninteded jumps occur
+# Ensures no unintended jumps occur
 ######################################
 func on_jump_buffer_timeout():
 	jump_buffer = false
@@ -167,7 +200,7 @@ func throw():
 
 ######################################
 # Allows the game to track the
-# the nubmer of bats thrown.
+# number of bats thrown.
 ######################################
 func get_bat_count() -> int:
 	return bat_count

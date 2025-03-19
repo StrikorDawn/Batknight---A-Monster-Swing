@@ -24,6 +24,7 @@ func _ready() -> void:
 	spin_timer.start()
 	throw_bat_logic()
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
 	if is_spinning == true:
@@ -56,4 +57,4 @@ func _on_grab_timer_timeout() -> void:
 func _on_enemy_body_entered(body: Node2D) -> void:
 	# Apply damage only when the bat is not sleeping
 	if not is_sleeping() and body.is_in_group("Enemy"):
-		body.take_damage(10)  # Replace with your desired damage amount
+		body.take_damage(15)  # Replace with your desired damage amount

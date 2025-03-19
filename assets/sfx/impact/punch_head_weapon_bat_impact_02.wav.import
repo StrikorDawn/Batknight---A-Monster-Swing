@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://db8iouvngcgbg"
+uid="uid://bdq3oemgxyfuo"
 path="res://.godot/imported/punch_head_weapon_bat_impact_02.wav-347b0e5b5bad0b17c39b72b3280cb873.sample"
 
 [deps]
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=0
+compress/mode=2
