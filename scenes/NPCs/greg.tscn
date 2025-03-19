@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci88fr8vwy74s"]
 
 [ext_resource type="Script" uid="uid://dvihy82wt05ip" path="res://scripts/NPC's/greg.gd" id="1_i8u5i"]
-[ext_resource type="Texture2D" uid="uid://dp1edex5b6t1p" path="res://assets/sprits/NPCs/Greg.png" id="2_wb23x"]
+[ext_resource type="Texture2D" uid="uid://cecxq3ah57rq8" path="res://assets/sprits/NPCs/Greg.png" id="2_wb23x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lr3ip"]
 size = Vector2(27.6662, 21.8569)

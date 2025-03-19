@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2pd8pewbs7gc"
-path="res://.godot/imported/Cyclops.png-d306ac3adaebe0c2af584313d5e6706b.ctex"
+uid="uid://cecxq3ah57rq8"
+path="res://.godot/imported/Greg.png-88abf450060f2313387dd99d90d077ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cyclops/Cyclops.png"
-dest_files=["res://.godot/imported/Cyclops.png-d306ac3adaebe0c2af584313d5e6706b.ctex"]
+source_file="res://assets/sprits/NPCs/Greg.png"
+dest_files=["res://.godot/imported/Greg.png-88abf450060f2313387dd99d90d077ae.ctex"]
 
 [params]
 
