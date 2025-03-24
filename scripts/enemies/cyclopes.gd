@@ -66,7 +66,7 @@ func start_boss_fight():
 		if distance <= 450:
 			if is_on_floor():
 				await get_tree().create_timer(.75).timeout
-				side_to_side() 
+				side_to_side()  #currently not working
 			else:
 				await get_tree().create_timer(.75).timeout
 		
@@ -137,7 +137,7 @@ func side_to_side():
 	await get_tree().create_timer(1) #probably could be reduced
 	
 	#Switches the direction of the sprite
-	self.scale.x = scale.x * (-1)
+	self.scale.x = scale.x * (-1) 
 
 	#time for part two of the attack
 	await get_tree().create_timer(1)
