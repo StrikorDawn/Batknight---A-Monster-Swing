@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://fc00e5ihmy7y"
+uid="uid://do8bmjxydooax"
 path="res://.godot/imported/punch_general_body_impact_02.wav-43899d4e31912d3007c6886fb639da48.sample"
 
 [deps]
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=2
+compress/mode=0

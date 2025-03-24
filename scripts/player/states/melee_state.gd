@@ -26,7 +26,7 @@ func do_physics_process(_delta: float) -> void:
 
 	# Maintain movement if needed
 	set_direction()
-	handle_movement(player.move_speed)
+	handle_movement(direction, player.move_speed)
 
 func _on_animation_finished():
 	player.attack_area.monitoring = false

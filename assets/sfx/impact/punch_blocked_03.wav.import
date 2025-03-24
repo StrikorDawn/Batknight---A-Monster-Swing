@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dyh1bjior13bt"
+uid="uid://dv8rsekh6twdi"
 path="res://.godot/imported/punch_blocked_03.wav-1ac176d6a3c3b53ff080035e7ad48a97.sample"
 
 [deps]
@@ -21,4 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-compress/mode=2
+compress/mode=0
