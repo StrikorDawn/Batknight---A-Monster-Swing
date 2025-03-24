@@ -10,7 +10,7 @@ func enter_state() -> void:
 
 func do_physics_process(_delta: float) -> void:
 	direction = set_direction()
-	handle_movement(player.dash_speed)
+	handle_movement(direction, player.dash_speed)
 	
 	if not player.is_dashing:
 		if not player.is_on_floor():

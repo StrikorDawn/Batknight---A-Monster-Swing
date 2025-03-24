@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=4 uid="uid://dptm87w8bl8xb"]
 
-[ext_resource type="Texture2D" uid="uid://bif2xyf7jc61t" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
-[ext_resource type="Texture2D" uid="uid://cl2yx48q2pdki" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
-[ext_resource type="Texture2D" uid="uid://cyxjgjyouiar6" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
+[ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
+[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
+[ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
 [ext_resource type="Texture2D" uid="uid://cwr4snn4aahy3" path="res://assets/objects/ShopV2.png" id="3_7uew7"]
 [ext_resource type="Texture2D" uid="uid://38lo2qq8nqw5" path="res://assets/sprites/player/PlayerConceptV1.1.png" id="7_b6l8a"]
 [ext_resource type="Texture2D" uid="uid://dgok4p6fkp0rj" path="res://assets/sprites/player/ConceptPlayerV1.2.png" id="8_nadx6"]

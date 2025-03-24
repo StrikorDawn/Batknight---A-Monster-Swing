@@ -34,7 +34,7 @@ var player_spawn_point
 ######################################
 func _ready() -> void:
 	# Instantiate and add the current scene
-	current_scene = GUILD_CAMP.instantiate()
+	current_scene = GUILD_CAMP.instantiate() #change to GUILD_CAMP when done testing 
 	add_child(current_scene)
 
 	# Get the player spawn point from the current scene

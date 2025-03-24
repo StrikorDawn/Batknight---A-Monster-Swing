@@ -30,7 +30,7 @@ func set_direction():
 	return direction
 
 # This function is used to handle basic movements accross different states
-func handle_movement(move_speed):
+func handle_movement(direction, move_speed):
 	if direction:
 		player.velocity.x = direction * move_speed # Will move the player forward based on direction.
 
