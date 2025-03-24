@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkip"]
 size = Vector2(83.228, 15)
 
-[node name="Bat" type="RigidBody2D"]
+[node name="Bat" type="RigidBody2D" groups=["Attacks"]]
 mass = 0.94
 center_of_mass_mode = 1
 center_of_mass = Vector2(7, 0)
