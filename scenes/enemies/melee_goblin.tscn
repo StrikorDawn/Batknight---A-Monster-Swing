@@ -186,7 +186,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4cjp0")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -207,10 +207,8 @@ shape = SubResource("CapsuleShape2D_21mh2")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai2sm")
-animation = &"attack"
+animation = &"run"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="AttackPoint" type="Marker2D" parent="."]
 
@@ -221,7 +219,7 @@ collision_mask = 2
 
 [node name="AttackRange" type="RayCast2D" parent="AttackPoint/AttackArea"]
 position = Vector2(18.5, 0)
-target_position = Vector2(-27.5, 0)
+target_position = Vector2(-18.5, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPoint/AttackArea"]
@@ -240,3 +238,4 @@ debug_color = Color(1, 0.00392157, 0.0588235, 0.180392)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_body_exited"]
+[connection signal="timeout" from="AttackCooldown" to="." method="handle_attack_cooldown"]

@@ -1,9 +1,10 @@
 extends EnemyBase
-class_name MeleeEnemy
+class_name EnemyMelee
 
 ######################################
 # Node References
 ######################################
+@onready var sprite = $Sprite
 @onready var attack_point = $AttackPoint
 @onready var attack_area = $AttackPoint/AttackArea
 @onready var detection_area = $"DetectionArea"
@@ -13,11 +14,6 @@ class_name MeleeEnemy
 ######################################
 # Enemy Variables
 ######################################
-var is_player_detected : bool = false
-
-######################################
-# Movement Functions
-######################################
 func _ready():
 	super._ready()
 	max_health = 50
@@ -26,27 +22,55 @@ func _ready():
 	move_speed = 100
 	attack_buffer = 0.75
 
+	sprite.connect("animation_finished", _on_attack_animation_finished)
+######################################
+# Movement Functions
+######################################
+
+func _physics_process(delta):
+	super._physics_process(delta)
+	if is_player_detected and target:
+		player_position = target.position
+	if is_player_in_attack_range():
+		do_attack()
 # Override the do_move() function to move towards the player
 func do_move():
 	# Only move if the player is detected
-	if is_player_detected:
+	if is_player_detected and not is_player_in_attack_range():
 		# Calculate the direction to move towards the player
-		var direction = (detection_area.position - position).normalized()
-		velocity = direction * move_speed
-		move_and_slide()
 		_update_direction()
+		velocity.x = direction * move_speed
+		handle_animation()
 	else:
 		# Stop moving if the player is not detected
 		velocity.x = 0
+	
+	move_and_slide()
 
 # Update direction based on velocity for correct facing
 func _update_direction():
-	if velocity.x > 0:
+	if player_position.x - position.x > 0:
 		direction = 1
 		is_facing_left = false
-	elif velocity.x < 0:
+		sprite.flip_h = true
+		attack_point.rotation_degrees = 180
+	elif player_position.x - position.x < 0:
 		direction = -1
 		is_facing_left = true
+		sprite.flip_h = false
+		attack_point.rotation_degrees = 0
+
+
+######################################
+# Handle Animations
+######################################
+func handle_animation():
+	if is_player_detected:
+		if velocity.x != 0:
+			sprite.play("run")  # Play running animation if the player is detected
+	else:
+		if velocity.x == 0:
+			sprite.play("idle")  # Play idle animation if no player is detecte
 
 ######################################
 # Combat Functions
@@ -56,13 +80,23 @@ func do_attack():
 	if is_player_in_attack_range() and can_attack:
 		# Handle attacking logic here
 		can_attack = false
-		attack_area.monitoring = true  # Enable the attack hitbox
-		attack_cooldown.start(attack_buffer)  # Start the cooldown timer
-
+		sprite.play("attack")
+		attack_area.monitoring = true # Enable the attack hitbox
+		
+		if attack_area.overlaps_body(target):
+			print("Take that!!!")
+		else:
+			print("I Missed")
+				
 		# Wait for a short amount of time to finish the attack and disable the attack hitbox
-		await get_tree().create_timer(0.2).timeout
-		attack_area.monitoring = false  # Disable the attack hitbox
-
+		attack_cooldown.start(attack_buffer)  # Start the cooldown timer
+	else:
+		print("Can't Attack yet")
+		  
+func _on_attack_animation_finished():
+	# Disable the attack hitbox
+	attack_area.monitoring = false
+	
 # Check if the RayCast2D hits the player (used to stop the movement and start attacking)
 func is_player_in_attack_range() -> bool:
 	# Check if the RayCast2D is colliding and that the collider is a Player
@@ -71,6 +105,7 @@ func is_player_in_attack_range() -> bool:
 		if collider.is_in_group("Player"):
 			return true
 	return false
+
 
 ######################################
 # Attack Cooldown Management
@@ -97,10 +132,14 @@ func drop_loot():
 func _on_body_entered(body: Node):
 	if body.is_in_group("Player"):
 		is_player_detected = true
+		target = body
+		player_position = target.position
 		# Optionally trigger a state change or event (e.g., start chasing the player)
 
 # Called when a body exits the detection area
 func _on_body_exited(body: Node):
 	if body.is_in_group("Player"):
 		is_player_detected = false
+		target = null
+		player_position = Vector2.ZERO
 		# Optionally stop chasing or reset state when the player leaves the detection area
