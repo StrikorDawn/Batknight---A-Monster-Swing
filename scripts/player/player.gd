@@ -31,6 +31,7 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 ######################################
 # Player Movment Variables
 ######################################
+@export var health : int = 100
 @export var move_speed : int = 275
 @export var dash_speed : int = 1000
 @export var jump_height: float = 125
@@ -73,6 +74,8 @@ func _ready():
 	states["Fall"] = FallState.new()
 	states["Throw"] = ThrowState.new()
 	states["Dash"] = DashState.new()
+	states["Damage"] = DamageState.new()
+	states["Death"] = DeathState.new()
 
 	# Assign player reference to each state
 	for state in states.values():
@@ -115,6 +118,17 @@ func set_state(new_state: PlayerState):
 		current_state.exit_state() # Finalizes current state
 	current_state = new_state
 	current_state.enter_state() # Initiates new state start up
+
+######################################
+# Forces DamageState when hit
+######################################
+func take_damage(amount: int):
+	health -= amount
+	if health <= 0:
+		set_state(states["Death"])
+	else:
+		set_state(states["Damage"])  # Enter damage state
+
 
 ######################################
 # Allows for non pixel perfect jumps

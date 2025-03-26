@@ -20,19 +20,20 @@ func _ready():
 	current_health = max_health
 	attack_damage = 20
 	move_speed = 100
-	attack_buffer = 0.75
-
+	attack_buffer = 2.0
+	
 	sprite.connect("animation_finished", _on_attack_animation_finished)
 ######################################
 # Movement Functions
 ######################################
 
 func _physics_process(delta):
-	super._physics_process(delta)
 	if is_player_detected and target:
 		player_position = target.position
 	if is_player_in_attack_range():
 		do_attack()
+	else:
+		do_move()
 # Override the do_move() function to move towards the player
 func do_move():
 	# Only move if the player is detected
@@ -82,17 +83,14 @@ func do_attack():
 		can_attack = false
 		sprite.play("attack")
 		attack_area.monitoring = true # Enable the attack hitbox
-		
 		if attack_area.overlaps_body(target):
-			print("Take that!!!")
-		else:
-			print("I Missed")
-				
+			target.take_damage(attack_damage)
 		# Wait for a short amount of time to finish the attack and disable the attack hitbox
 		attack_cooldown.start(attack_buffer)  # Start the cooldown timer
 	else:
-		print("Can't Attack yet")
-		  
+		return
+
+  
 func _on_attack_animation_finished():
 	# Disable the attack hitbox
 	attack_area.monitoring = false
