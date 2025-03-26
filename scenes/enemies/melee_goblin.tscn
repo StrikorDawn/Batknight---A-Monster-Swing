@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://bnpsnrh55vejd"]
+
+[ext_resource type="Texture2D" uid="uid://dkwn6yntt5cmr" path="res://assets/sprites/goblin/Goblin_idle.png" id="1_g2xqn"]
+[ext_resource type="Script" uid="uid://voa2ruqc0gn1" path="res://scripts/enemies/subclasses/enemy_melee.gd" id="1_yj88r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj88r"]
+atlas = ExtResource("1_g2xqn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxxey"]
+atlas = ExtResource("1_g2xqn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1u80y"]
+atlas = ExtResource("1_g2xqn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djif8"]
+atlas = ExtResource("1_g2xqn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ai2sm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj88r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxxey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1u80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djif8")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21mh2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2xqn"]
+
+[node name="MeleeGoblin" type="CharacterBody2D"]
+collision_layer = 8
+script = ExtResource("1_yj88r")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ai2sm")
+animation = &"idle"
+frame_progress = 0.941209
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+shape = SubResource("CapsuleShape2D_21mh2")
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+shape = SubResource("RectangleShape2D_g2xqn")

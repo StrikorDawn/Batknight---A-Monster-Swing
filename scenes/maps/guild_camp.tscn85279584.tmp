@@ -507,4 +507,5 @@ tile_set = SubResource("TileSet_16ioo")
 position = Vector2(-333, -47)
 
 [node name="Greg" parent="." instance=ExtResource("8_nsvp3")]
-position = Vector2(1067, 8)
+position = Vector2(1068, -4)
+scale = Vector2(1.219, 1.219)
