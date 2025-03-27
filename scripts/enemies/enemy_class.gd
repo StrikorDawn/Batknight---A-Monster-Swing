@@ -24,6 +24,7 @@ var target : Node2D = null
 ######################################
 var is_facing_left : bool = true
 var can_attack : bool = true
+var is_attacking : bool = false
 var is_dead : bool = false
 var is_player_detected : bool = false
 
@@ -61,10 +62,9 @@ func _update_direction():
 ######################################
 func take_damage(damage : int):
 	current_health -= damage
-	if current_health < 0: 
+	if current_health <= 0: 
 		current_health = 0
 		is_dead = true
-	
 
 func detect_player():
 	pass

@@ -45,13 +45,17 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("4_ai2sm")
 region = Rect2(16, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo4th"]
+atlas = ExtResource("1_g2xqn")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_pw7so"]
 atlas = ExtResource("1_g2xqn")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oo4th"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsgon"]
 atlas = ExtResource("1_g2xqn")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yj88r"]
 atlas = ExtResource("1_g2xqn")
@@ -132,13 +136,13 @@ animations = [{
 "texture": SubResource("AtlasTexture_kimus")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bjtit")
+"texture": SubResource("AtlasTexture_oo4th")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pw7so")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oo4th")
+"texture": SubResource("AtlasTexture_bsgon")
 }],
 "loop": false,
 "name": &"hurt",
@@ -185,9 +189,6 @@ size = Vector2(38, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai2sm"]
 size = Vector2(300, 117)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4nt0"]
-size = Vector2(24, 33)
-
 [node name="MeleeGoblin" type="CharacterBody2D"]
 collision_layer = 8
 script = ExtResource("1_yj88r")
@@ -199,10 +200,8 @@ shape = SubResource("CapsuleShape2D_21mh2")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_ai2sm")
-animation = &"hurt"
+animation = &"attack"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="AttackPoint" type="Marker2D" parent="."]
 
@@ -212,8 +211,8 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="AttackRange" type="RayCast2D" parent="AttackPoint/AttackArea"]
-position = Vector2(29, 0)
-target_position = Vector2(-29, 0)
+position = Vector2(18.5, 0)
+target_position = Vector2(-18.5, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPoint/AttackArea"]
@@ -227,14 +226,6 @@ collision_mask = 2
 position = Vector2(0, -41.5)
 shape = SubResource("RectangleShape2D_ai2sm")
 debug_color = Color(1, 0.00392157, 0.0588235, 0.180392)
-
-[node name="HurtBox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_o4nt0")
 
 [node name="AttackCooldown" type="Timer" parent="."]
 
