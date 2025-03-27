@@ -9,8 +9,8 @@ extends Node
 # Preloaded Scenes
 ######################################
 const GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
-const CYCLOPES_MAZE = preload("res://scenes/maps/cyclopes/maze_base.tscn")
-const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/cyclopes/boss_room_base.tscn")
+const CYCLOPES_MAZE = preload("res://scenes/maps/cyclops/maze_base.tscn")
+const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/cyclops/boss_room_base.tscn")
 
 const PLAYER = preload("res://scenes/player/player.tscn")
 const BAT = preload("res://scenes/bat/bat.tscn")
@@ -142,5 +142,4 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 	#player.add_child(Camera2D.new())
 
 	# Connect the player's bat_thrown signal
-	player.bat_thrown.connect(_on_bat_thrown)
 	#player.add_child(Camera2D.new())

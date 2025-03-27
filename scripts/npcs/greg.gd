@@ -2,8 +2,8 @@ extends Area2D
 
 @onready var to_maze: Button = $ToMaze
 @onready var main: Node = $"."
-const CYCLOPES_MAZE = preload("res://scenes/Maps/cyclopes/maze_base.tscn")
-const GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
+const CYCLOPES_MAZE = preload("res://scenes/maps/cyclops/maze_base.tscn")
+const GUILD_CAMP = preload("res://scenes/maps/guild_camp.tscn")
 
 func _on_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):

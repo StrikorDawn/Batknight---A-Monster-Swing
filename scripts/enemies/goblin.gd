@@ -1,4 +1,4 @@
-extends EnemyClass
+extends CharacterBody2D
 class_name GoblinMelee
 
 const speed = 50
@@ -17,8 +17,8 @@ var is_roaming: bool = true
 
 var player: CharacterBody2D
 var player_in_area = false
-func _ready():
-	set_health(80)
+#func _ready():
+	#set_health(80)
 
 func _process(delta):
 	if !is_on_floor():
@@ -31,9 +31,9 @@ func _process(delta):
 	handle_animation()
 	move_and_slide()
 	
-func set_health(value):
-	super.set_health(value)
-	health -= 20
+#func set_health(value):
+	#super.set_health(value)
+	#health -= 20
 	
 func move(delta):
 	if !dead:

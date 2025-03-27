@@ -6,7 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mkip"]
 size = Vector2(83.228, 15)
 
-[node name="Bat" type="RigidBody2D" groups=["Attacks"]]
+[node name="Bat" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 9
 mass = 0.94
 center_of_mass_mode = 1
 center_of_mass = Vector2(7, 0)
@@ -29,7 +31,8 @@ one_shot = true
 [node name="GrabArea" type="Area2D" parent="."]
 position = Vector2(15, 0)
 scale = Vector2(0.783454, 0.697374)
-collision_layer = 2
+collision_layer = 0
+collision_mask = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea"]
 position = Vector2(11.386, -0.5)
@@ -41,4 +44,5 @@ wait_time = 5.0
 
 [connection signal="timeout" from="SpinTimer" to="." method="_on_spin_timer_timeout"]
 [connection signal="body_entered" from="GrabArea" to="." method="_on_grab_area_entered"]
+[connection signal="body_entered" from="GrabArea" to="." method="_on_enemy_body_entered"]
 [connection signal="timeout" from="GrabTimer" to="." method="_on_grab_timer_timeout"]

@@ -33,6 +33,5 @@ func set_direction():
 func handle_movement(direction, move_speed):
 	if direction:
 		player.velocity.x = direction * move_speed # Will move the player forward based on direction.
-
 	else:
 		player.velocity.x = 0 # Allows the player to stop while in the air
