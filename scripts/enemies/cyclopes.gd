@@ -13,6 +13,8 @@ extends CharacterBody2D
 
 @onready var boss_battle: bool
 
+var can_jump: bool = true
+
 const SPEED = 130
 
 signal dead_boss
@@ -22,13 +24,44 @@ func _ready() -> void:
 	#function to run starting animation
 	pass
 	
+var was_on_floor = true  # Track previous floor state
+
+var was_in_air = false # Track if the boss was in the air
+
 func _physics_process(delta: float) -> void:
 	var gravity = ProjectSettings.get("physics/2d/default_gravity")
 	
-	# Apply gravity
+	handle_animation()
+	
+		# Apply gravity
 	velocity.y += gravity * delta
 	move_and_slide()
 	
+	
+	# Handle animations
+func handle_animation():
+	if is_on_floor() and can_jump:
+		can_jump = false
+		sprite_2d.play("jump")
+		await sprite_2d.animation_finished
+	elif not is_on_floor(): # Boss is in the air
+		sprite_2d.play("in_air")
+		was_in_air = true
+	elif was_in_air and is_on_floor(): # Boss just landed
+		sprite_2d.play("land")
+		velocity.x = 0
+		await sprite_2d.animation_finished
+		can_jump = true
+		was_in_air = false # Reset flag after landing
+	else: # Boss is idle
+		sprite_2d.play("stand")
+
+	# Detect landing
+	if is_on_floor() and not was_on_floor:
+		sprite_2d.play("land")  # Play landing animation
+	was_on_floor = is_on_floor()
+	
+
 
 func take_damage():
 	health = health - 10
@@ -55,7 +88,7 @@ func dead():
 func start_boss_fight():
 	boss_battle = true
 	#play starting animation
-	await get_tree().create_timer(.5).timeout
+	await get_tree().create_timer(0).timeout
 	#print("boss battle start")
 	set_physics_process(true)
 	
@@ -84,7 +117,17 @@ func start_boss_fight():
 	
 	pass
 	
-	
+
+		## Handle animation states
+	#if not on_floor_now and velocity.y < 0: # Jumping up
+		#sprite_2d.play("jump")
+	#elif not on_floor_now and velocity.y > 0: # Falling down
+		#sprite_2d.play("in_air")
+	#elif on_floor_now and not was_on_floor: # Just landed
+		#sprite_2d.play("land")
+	#elif on_floor_now and velocity == Vector2.ZERO: # Standing still
+		#sprite_2d.play("stand")
+	#
 func find_player_distance():
 	var player_global_position = player.global_position
 	#print(player_global_position)
@@ -99,29 +142,31 @@ func jump_attack():
 	if is_on_floor():
 		small_jump()
 	
-	if is_on_floor():
-		small_jump()
 	
 	
 	
-	
+@onready var sprite_2d: AnimatedSprite2D = $Phase1/Sprite2D
+
 func small_jump():
-	
-	var target = player.global_position
-	var direction = (target - global_position).normalized()  # Direction toward target
-	
-	# Calculate required initial velocity for the jump
-	var gravity = ProjectSettings.get("physics/2d/default_gravity")
-	
-	var vy = -sqrt(2 * gravity * jump_height)  # Solve for initial vertical velocity
-	var total_time = (vy / gravity) * 2  # Time for a full arc
-	var vx = -(target.x - global_position.x) / total_time  # Horizontal velocity
-	
-	velocity = Vector2(vx, vy)
-	await get_tree().create_timer(total_time)
-	set_physics_process(true)
-	await get_tree().create_timer(1).timeout
-	
+	if is_on_floor():
+		
+		var target = player.global_position
+		var direction = (target - global_position).normalized()  # Direction toward target
+
+		# Calculate required initial velocity for the jump
+		var gravity = ProjectSettings.get("physics/2d/default_gravity")
+		var vy = -sqrt(2 * gravity * jump_height)  # Solve for initial vertical velocity
+		var total_time = (vy / gravity) * 2  # Time for a full arc
+		var vx = -(target.x - global_position.x) / total_time  # Horizontal velocity
+
+		velocity = Vector2(vx, vy)
+		
+		await get_tree().create_timer(total_time)  # Wait for the jump duration
+
+		set_physics_process(true)
+
+		await get_tree().create_timer(1).timeout  # Wait before resetting
+
 	
 func side_to_side():
 	#play attack animation
@@ -161,3 +206,7 @@ func side_to_side():
 #Phase 2
 	#down swipe
 	#side slam
+
+
+func _on_sprite_2d_animation_finished() -> void:
+	pass # Replace with function body.
