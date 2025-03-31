@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c28yw77rpsd2f" path="res://assets/sprites/cyclops/MouthCyclops.png" id="4_51lru"]
 [ext_resource type="Texture2D" uid="uid://d4k6irsmks5pv" path="res://assets/sprites/cyclops/Cyclops(Animated)-1.png" id="4_p5ear"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t0y2"]
 size = Vector2(245.5, 351.647)
 
@@ -81,6 +82,7 @@ sprite_frames = SubResource("SpriteFrames_75ls0")
 animation = &"jump"
 autoplay = "stand"
 
+
 [node name="P1HitBox" type="Area2D" parent="Phase1"]
 show_behind_parent = true
 position = Vector2(0, 13)
@@ -128,4 +130,3 @@ polygon = PackedVector2Array(4, 137, 202, 166, 400, 283, 485, 364, 563, 451, 607
 disabled = true
 
 [connection signal="animation_finished" from="Phase1/Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
-[connection signal="body_entered" from="Phase1/P1HitBox" to="." method="_on_p_1_hit_box_body_entered"]

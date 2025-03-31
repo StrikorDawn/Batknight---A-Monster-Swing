@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
 [ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
 [ext_resource type="Texture2D" uid="uid://cwr4snn4aahy3" path="res://assets/objects/ShopV2.png" id="3_7uew7"]
-[ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/npcs/greg.tscn" id="6_c8yf3"]
+[ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/npcs/greg.tscn" id="8_nsvp3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf2ps"]
 texture = ExtResource("1_lfqax")
@@ -506,5 +506,6 @@ tile_set = SubResource("TileSet_16ioo")
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(-333, -47)
 
-[node name="Greg" parent="." instance=ExtResource("6_c8yf3")]
-position = Vector2(1100, 7)
+[node name="Greg" parent="." instance=ExtResource("8_nsvp3")]
+position = Vector2(1068, -4)
+scale = Vector2(1.219, 1.219)
