@@ -256,6 +256,7 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="CloseDoor" type="Area2D" parent="."]
 position = Vector2(-11, 196)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseDoor"]
 position = Vector2(1213, 226)
@@ -264,6 +265,7 @@ shape = SubResource("SegmentShape2D_nfa7k")
 [node name="ToGuildCamp" type="Area2D" parent="."]
 position = Vector2(2193, 1298)
 rotation = -1.54813
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToGuildCamp"]
 position = Vector2(36, 37)
@@ -271,7 +273,7 @@ shape = SubResource("SegmentShape2D_nfa7k")
 
 [node name="StartBossBattle" type="Area2D" parent="."]
 position = Vector2(0, -2)
-collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartBossBattle"]
 position = Vector2(1139, 1018)

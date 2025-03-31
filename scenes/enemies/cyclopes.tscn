@@ -16,6 +16,7 @@ size = Vector2(20, 26.717)
 
 [node name="Cyclopes" type="CharacterBody2D"]
 z_index = -1
+collision_layer = 8
 script = ExtResource("1_6t0y2")
 
 [node name="P2Collision" type="CollisionShape2D" parent="."]
