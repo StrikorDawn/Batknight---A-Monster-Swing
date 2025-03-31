@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cyh7480b1v6xj" path="res://assets/sprites/goblin/Goblin_walk.png" id="5_o4nt0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21mh2"]
+radius = 16.0
+height = 58.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgrgq"]
 atlas = ExtResource("2_djif8")
@@ -180,13 +182,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2xqn"]
-size = Vector2(38, 34)
+size = Vector2(78, 58)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ai2sm"]
-size = Vector2(300, 117)
+size = Vector2(700, 279)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4nt0"]
-size = Vector2(24, 33)
+size = Vector2(48, 61)
 
 [node name="MeleeGoblin" type="CharacterBody2D"]
 collision_layer = 8
@@ -197,12 +199,10 @@ texture_filter = 1
 shape = SubResource("CapsuleShape2D_21mh2")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ai2sm")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
-frame = 4
-frame_progress = 1.0
 
 [node name="AttackPoint" type="Marker2D" parent="."]
 
@@ -213,10 +213,11 @@ collision_mask = 2
 
 [node name="AttackRange" type="RayCast2D" parent="AttackPoint/AttackArea"]
 position = Vector2(29, 0)
-target_position = Vector2(-29, 0)
+target_position = Vector2(-52, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPoint/AttackArea"]
+position = Vector2(-21, 0)
 shape = SubResource("RectangleShape2D_g2xqn")
 
 [node name="DetectionArea" type="Area2D" parent="."]
@@ -224,7 +225,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-position = Vector2(0, -41.5)
+position = Vector2(0, -110.5)
 shape = SubResource("RectangleShape2D_ai2sm")
 debug_color = Color(1, 0.00392157, 0.0588235, 0.180392)
 
@@ -233,7 +234,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -0.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_o4nt0")
 
 [node name="AttackCooldown" type="Timer" parent="."]
