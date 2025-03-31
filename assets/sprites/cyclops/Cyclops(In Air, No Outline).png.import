@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfaac8mwwb6ta"
-path="res://.godot/imported/Cyclops(Animated)-3.png-31feef2625e2e802decf352895aae361.ctex"
+uid="uid://dldpxaav2stkx"
+path="res://.godot/imported/Cyclops(In Air, No Outline).png-d4f5341107c17728793f16c1fb363fa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cyclops/Cyclops(Animated)-3.png"
-dest_files=["res://.godot/imported/Cyclops(Animated)-3.png-31feef2625e2e802decf352895aae361.ctex"]
+source_file="res://assets/sprites/cyclops/Cyclops(In Air, No Outline).png"
+dest_files=["res://.godot/imported/Cyclops(In Air, No Outline).png-d4f5341107c17728793f16c1fb363fa4.ctex"]
 
 [params]
 
