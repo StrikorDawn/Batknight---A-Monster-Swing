@@ -9,8 +9,8 @@ extends Node
 # Preloaded Scenes
 ######################################
 const GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
-const CYCLOPES_MAZE = preload("res://scenes/maps/cyclopes/maze_base.tscn")
-const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/cyclopes/boss_room_base.tscn")
+const CYCLOPES_MAZE = preload("res://scenes/Maps/cyclops/maze_base.tscn")
+const CYCLOPES_BOSS_ROOM = preload("res://scenes/Maps/cyclops/boss_room_base.tscn")
 const MAIN_MENU = preload("res://scenes/menus/menu.tscn")
 
 const PLAYER = preload("res://scenes/player/player.tscn")
@@ -66,7 +66,7 @@ func start_game():
 	player_spawn_point = current_scene.get_node("PlayerSpawn")
 
 	player.position = player_spawn_point.position
-	
+	player.game_over.connect(bad_function)
 
 ######################################
 # Called every frame. 'delta' is the 
@@ -120,9 +120,6 @@ func _on_bat_grabbed():
 #Navigation
 ######################################
 
-func _set_scene():
-	var new_scene = CYCLOPES_BOSS_ROOM
-	load_new_scene(new_scene)
 
 func load_new_scene(new_scene): #set it up to pass the new scene through the 
 	#print("print")
@@ -141,6 +138,7 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 	# Get the player spawn point from the current scene
 	player_spawn_point = current_scene.get_node("PlayerSpawn")
 
+	
 	# Set the player's position to the spawn point's position
 	player.position = player_spawn_point.position
 
@@ -150,3 +148,7 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 	# Connect the player's bat_thrown signal
 	player.bat_thrown.connect(_on_bat_thrown)
 	#player.add_child(Camera2D.new())
+
+func bad_function():
+	load_new_scene(GUILD_CAMP)
+	

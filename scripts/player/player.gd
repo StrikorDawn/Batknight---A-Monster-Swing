@@ -5,7 +5,7 @@ class_name Player
 # Custom Signals
 ######################################
 signal bat_thrown
-
+signal game_over
 ######################################
 # Preloaded Scenes
 ######################################

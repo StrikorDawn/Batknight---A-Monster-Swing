@@ -526,7 +526,6 @@ texture = ExtResource("8_nadx6")
 [node name="Greg" parent="." instance=ExtResource("8_nsvp3")]
 position = Vector2(1068, -4)
 scale = Vector2(1.219, 1.219)
-collision_mask = 2
 
 [node name="Menu" parent="." instance=ExtResource("8_sk0h3")]
 process_mode = 3

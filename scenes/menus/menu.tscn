@@ -35,7 +35,7 @@ position = Vector2(560, 410)
 scale = Vector2(3.349, 3.349)
 texture = ExtResource("3_cfcag")
 
-[node name="Button" type="Button" parent="QuitButton"]
+[node name="Quit" type="Button" parent="QuitButton"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -41.5049
 offset_top = -19.1102
@@ -46,3 +46,4 @@ icon_alignment = 1
 expand_icon = true
 
 [connection signal="pressed" from="Play/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="QuitButton/Quit" to="." method="_on_quit_pressed"]
