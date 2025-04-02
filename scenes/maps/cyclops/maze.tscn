@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://c24507ky4oc6"]
+[gd_scene load_steps=6 format=4 uid="uid://0kbxy184q4co"]
 
 [ext_resource type="Script" uid="uid://rypycneq1yur" path="res://scripts/maps/maze.gd" id="1_wjeuv"]
 [ext_resource type="Texture2D" uid="uid://dki2m1wixw8c4" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_dwqcc"]

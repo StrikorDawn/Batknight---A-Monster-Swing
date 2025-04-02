@@ -118,7 +118,7 @@ func small_jump():
 	var vx = -(target.x - global_position.x) / total_time  # Horizontal velocity
 	
 	velocity = Vector2(vx, vy)
-	await get_tree().create_timer(total_time)
+	get_tree().create_timer(total_time)
 	set_physics_process(true)
 	await get_tree().create_timer(1).timeout
 	

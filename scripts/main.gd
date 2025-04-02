@@ -11,6 +11,7 @@ extends Node
 const GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
 const CYCLOPES_MAZE = preload("res://scenes/maps/cyclopes/maze_base.tscn")
 const CYCLOPES_BOSS_ROOM = preload("res://scenes/maps/cyclopes/boss_room_base.tscn")
+const MAIN_MENU = preload("res://scenes/menus/menu.tscn")
 
 const PLAYER = preload("res://scenes/player/player.tscn")
 const BAT = preload("res://scenes/bat/bat.tscn")
@@ -36,31 +37,36 @@ func _ready() -> void:
 	# Instantiate and add the current scene
 	current_scene = GUILD_CAMP.instantiate() #change to GUILD_CAMP when done testing 
 	add_child(current_scene)
-
-	# Get the player spawn point from the current scene
-	player_spawn_point = current_scene.get_node("PlayerSpawn")
-
-	# Instantiate the player
-	player = PLAYER.instantiate()
-
-	# Set the player's position to the spawn point's position
-	player.position = player_spawn_point.position
-
-	# Add the player to the scene
-	add_child(player)
-
-	# Add a Camera2D as a child to the player
 	
-	#player.add_child(Camera2D.new())
-
-	# Connect the player's bat_thrown signal
-	player.bat_thrown.connect(_on_bat_thrown)
+	
+	#start_game()
+	## Get the player spawn point from the current scene
+	#player_spawn_point = current_scene.get_node("PlayerSpawn")
+#
+	#player.position = player_spawn_point.position
 	
 	#Connect the to boss room signal
 	#var cyclopes_maze = CYCLOPES_MAZE.instantiate()
 	#cyclopes_maze.boss_room.connect(_set_scene)
 	
+#Called when player presses the start button
+func start_game():
+	# Instantiate the player
+	player = PLAYER.instantiate()
 
+	# Add the player to the scene
+	add_child(player)
+
+	# Add a Camera2D as a child to the player
+	player.add_child(Camera2D.new())
+
+	# Connect the player's bat_thrown signal
+	player.bat_thrown.connect(_on_bat_thrown)
+
+	player_spawn_point = current_scene.get_node("PlayerSpawn")
+
+	player.position = player_spawn_point.position
+	
 
 ######################################
 # Called every frame. 'delta' is the 
