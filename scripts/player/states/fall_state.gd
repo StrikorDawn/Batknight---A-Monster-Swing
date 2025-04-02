@@ -21,7 +21,13 @@ func do_physics_process(delta: float) -> void:
 		# If Dash is allowed sets to dash.
 		if Input.is_action_just_pressed("dash") and player.dash_available == true:
 			player.set_state(player.states["Dash"])
-			
+		
+		elif Input.is_action_just_pressed("melee"):
+			player.set_state(player.states["Melee"])
+		
+		elif Input.is_action_just_pressed("throw"):
+			player.set_state(player.states["Throw"])
+		
 		# Jump is allowed if within coyote time
 		if player.jump_available and Input.is_action_just_pressed("jump"):
 			player.set_state(player.states["Jump"])

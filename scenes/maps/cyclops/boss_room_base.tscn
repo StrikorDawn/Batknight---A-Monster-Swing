@@ -1,11 +1,10 @@
 [gd_scene load_steps=7 format=4 uid="uid://dn2ndfnsytawo"]
 
-[ext_resource type="Texture2D" uid="uid://cl2yx48q2pdki" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_n1ahf"]
-[ext_resource type="Script" uid="uid://28xhrw4u87sc" path="res://scripts/Maps/boss_room_base.gd" id="1_nfa7k"]
-[ext_resource type="Texture2D" uid="uid://c2pd8pewbs7gc" path="res://assets/sprites/cyclops/Cyclops.png" id="3_i70v6"]
+[ext_resource type="Script" uid="uid://28xhrw4u87sc" path="res://scripts/maps/boss_room_base.gd" id="1_ctnyv"]
+[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_hv88p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6433"]
-texture = ExtResource("1_n1ahf")
+texture = ExtResource("2_hv88p")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -211,8 +210,12 @@ sources/0 = SubResource("TileSetAtlasSource_g6433")
 a = Vector2(25.4828, -16.3882)
 b = Vector2(199.347, -24.3308)
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_i70v6"]
+a = Vector2(974, 195)
+b = Vector2(-562, 198)
+
 [node name="BossRoomBase" type="Node2D" groups=["boss_rooms"]]
-script = ExtResource("1_nfa7k")
+script = ExtResource("1_ctnyv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
@@ -253,6 +256,7 @@ zoom = Vector2(0.75, 0.75)
 
 [node name="CloseDoor" type="Area2D" parent="."]
 position = Vector2(-11, 196)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloseDoor"]
 position = Vector2(1213, 226)
@@ -261,15 +265,23 @@ shape = SubResource("SegmentShape2D_nfa7k")
 [node name="ToGuildCamp" type="Area2D" parent="."]
 position = Vector2(2193, 1298)
 rotation = -1.54813
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToGuildCamp"]
 position = Vector2(36, 37)
 shape = SubResource("SegmentShape2D_nfa7k")
 
-[node name="Cyclops" type="Sprite2D" parent="."]
-position = Vector2(1701, 917)
-scale = Vector2(0.306906, 0.306906)
-texture = ExtResource("3_i70v6")
+[node name="StartBossBattle" type="Area2D" parent="."]
+position = Vector2(0, -2)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartBossBattle"]
+position = Vector2(1139, 1018)
+shape = SubResource("SegmentShape2D_i70v6")
+
+[node name="BossSpawn" type="Marker2D" parent="."]
+position = Vector2(906, 1024)
 
 [connection signal="body_exited" from="CloseDoor" to="." method="_on_close_door_body_exited"]
 [connection signal="body_entered" from="ToGuildCamp" to="." method="_on_to_guild_camp_body_entered"]
+[connection signal="body_entered" from="StartBossBattle" to="." method="_on_start_boss_battle_body_entered"]

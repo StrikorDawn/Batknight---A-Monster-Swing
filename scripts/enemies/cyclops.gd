@@ -19,6 +19,7 @@ signal dead_boss
 
 func _ready() -> void:
 	set_physics_process(false)
+	add_to_group("Enemy")
 	#function to run starting animation
 	pass
 	
@@ -30,20 +31,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 
-func take_damage():
-	health = health - 10
+func take_damage(damage):
+	health -= damage
 	print(health)
 	
 	if health <= 0:
 		dead()
-	
-func _on_p_1_hit_box_body_entered(body: Node2D) -> void: #currently broken
-	
-	if body.is_in_group("Attacks"): #checks for collision shapes in the attacks group
-		take_damage() #reduces boss's health
-		p_1.disabled = true #turns off collision shape temporarily
-		await get_tree().create_timer(.6).timeout
-		p_1.disabled = false 
 	
 func dead():
 	boss_battle = false

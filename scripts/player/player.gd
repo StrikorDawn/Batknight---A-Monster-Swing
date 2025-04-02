@@ -20,6 +20,8 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 @onready var dash_timer: Timer = $Dash/DashTimer
 @onready var dash_cool_down: Timer = $Dash/DashCoolDown
 @onready var bat_spawn_point: Marker2D = %BatSpawnPoint
+@onready var recovery_timer : Timer = $RecoveryTimer
+@onready var attack_area = $BatSpawnPoint/AttackArea
 
 ######################################
 # Custom Player Gravity Calculations
@@ -31,6 +33,7 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 ######################################
 # Player Movment Variables
 ######################################
+@export var health : int = 100
 @export var move_speed : int = 275
 @export var dash_speed : int = 1000
 @export var jump_height: float = 125
@@ -65,14 +68,17 @@ var current_state: PlayerState
 
 func _ready():
 	add_to_group("Player")
-	
+	attack_area.monitoring = false
 	# Create and store state instances
 	states["Idle"] = IdleState.new()
 	states["Run"] = RunState.new()
 	states["Jump"] = JumpState.new()
 	states["Fall"] = FallState.new()
 	states["Throw"] = ThrowState.new()
+	states["Melee"] = MeleeState.new()
 	states["Dash"] = DashState.new()
+	states["Damage"] = DamageState.new()
+	states["Death"] = DeathState.new()
 
 	# Assign player reference to each state
 	for state in states.values():
@@ -81,7 +87,7 @@ func _ready():
 	# Connect jump buffer and coyote time timers
 	jump_buffer_timer.timeout.connect(on_jump_buffer_timeout)
 	coyote_timer.timeout.connect(on_coyote_timeout)
-
+	
 	# Set initial state
 	set_state(states["Idle"])
 
@@ -115,6 +121,23 @@ func set_state(new_state: PlayerState):
 		current_state.exit_state() # Finalizes current state
 	current_state = new_state
 	current_state.enter_state() # Initiates new state start up
+
+######################################
+# Forces DamageState when hit
+######################################
+func take_damage(amount: int, attaker_position : Vector2):
+	var knockback_direction = (global_position - attaker_position).normalized()
+	health -= amount
+	print(health)
+	
+	if health <= 0:
+		health = 0
+		set_state(states["Death"])
+	else:
+		set_state(states["Damage"])  # Enter damage state
+		velocity = Vector2(knockback_direction.x * 400, -50)
+		move_and_slide()
+
 
 ######################################
 # Allows for non pixel perfect jumps

@@ -12,6 +12,7 @@ signal bat_grabbed
 @export var forward_velocity : int = 750
 @export var upward_velocity : int = -250
 @export var spin : float = 1000.0
+var damage : int = 20
 
 # Bat Check Variables
 var is_spinning : bool
@@ -43,12 +44,15 @@ func throw_bat_logic() -> void:
 func _on_spin_timer_timeout() -> void:
 	is_spinning = false
 
-
-
 func _on_grab_area_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		bat_grabbed.emit()
 		queue_free()
+
+func _on_enemy_body_entered(body: Node2D) -> void:
+	# Apply damage only when the bat is not sleeping
+	if not is_sleeping() and body.is_in_group("Enemy"):
+		body.take_damage(damage)  # Replace with your desired damage amount
 
 
 func _on_grab_timer_timeout() -> void:

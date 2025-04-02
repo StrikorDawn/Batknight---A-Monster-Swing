@@ -68,6 +68,7 @@ dash={
 
 [physics]
 
+2d/physics_engine="GodotPhysics2D"
 3d/physics_engine="JoltPhysics3D"
 
 [rendering]
