@@ -33,18 +33,20 @@ var is_player_detected : bool = false
 ######################################
 func _ready():
 	add_to_group("Enemy")
-	if not is_on_floor():
-		velocity.y = 1  # Set a small initial downward velocity
+	current_health = max_health
 
 func _physics_process(delta):
 	if not is_dead:
-		# Apply gravity continuously if not on the floor
-		if not is_on_floor():
-			velocity.y += GRAVITY * delta  # Apply gravity each frame
+		apply_gravity(delta)
+		handle_animation()
 		_update_direction()
 		do_move()
 	else:
 		handle_death()
+
+func apply_gravity(delta):
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta  # Apply gravity each frame
 		
 func do_move():
 	pass
@@ -56,7 +58,14 @@ func _update_direction():
 	elif velocity.x < 0:
 		direction = -1
 		is_facing_left = true
-		
+
+######################################
+# Handle Animations
+######################################
+func handle_animation():
+	pass
+
+
 ######################################
 # Combat Functions
 ######################################

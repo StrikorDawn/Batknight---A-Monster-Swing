@@ -18,8 +18,6 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 ######################################
 # Node References
 ######################################
-#@onready var pause_menu: Node2D = $"Menus/Pause Menu"
-#@onready var pause: Button = $Menus/Pause
 @onready var player: CharacterBody2D
 
 ######################################
@@ -125,7 +123,6 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 	
 	
 	current_scene = new_scene.instantiate()
-	var root = get_tree().root 
 	add_child(current_scene)
 	
 	if current_scene.is_in_group("boss_rooms"):
@@ -137,9 +134,3 @@ func load_new_scene(new_scene): #set it up to pass the new scene through the
 
 	# Set the player's position to the spawn point's position
 	player.position = player_spawn_point.position
-
-	# Add a Camera2D as a child to the player
-	#player.add_child(Camera2D.new())
-
-	# Connect the player's bat_thrown signal
-	#player.add_child(Camera2D.new())

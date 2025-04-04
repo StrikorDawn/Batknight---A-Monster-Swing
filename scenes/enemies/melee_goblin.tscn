@@ -201,7 +201,7 @@ shape = SubResource("CapsuleShape2D_21mh2")
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ai2sm")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="AttackPoint" type="Marker2D" parent="."]
@@ -213,7 +213,7 @@ collision_mask = 2
 
 [node name="AttackRange" type="RayCast2D" parent="AttackPoint/AttackArea"]
 position = Vector2(29, 0)
-target_position = Vector2(-52, 0)
+target_position = Vector2(-41, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPoint/AttackArea"]
@@ -239,6 +239,9 @@ shape = SubResource("RectangleShape2D_o4nt0")
 
 [node name="AttackCooldown" type="Timer" parent="."]
 
+[node name="DamageCooldown" type="Timer" parent="."]
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_body_exited"]
 [connection signal="timeout" from="AttackCooldown" to="." method="handle_attack_cooldown"]
+[connection signal="timeout" from="DamageCooldown" to="." method="_on_damage_cooldown_timeout"]
