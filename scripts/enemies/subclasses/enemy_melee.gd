@@ -17,10 +17,12 @@ class_name EnemyMelee
 ######################################
 func _ready():
 	max_health = 50
+	current_health = max_health
 	attack_damage = 20
 	move_speed = 100
 	attack_buffer = 1.0
 	super._ready()
+	health_bar.update(max_health,current_health)
 	
 ######################################
 # Movement Functions
@@ -125,6 +127,7 @@ func handle_attack_cooldown():
 ######################################
 func take_damage(damage : int):
 	super.take_damage(damage)
+	health_bar.update(max_health, current_health)
 	print("Enemy: " + str(current_health))
 	if not is_dead:
 		set_physics_process(false)

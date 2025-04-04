@@ -1,12 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://doo6ic40kufsm"]
 
-[ext_resource type="Script" uid="uid://rl3y8ktr24uo" path="res://scripts/enemies/cyclopes.gd" id="1_6t0y2"]
+[ext_resource type="Script" uid="uid://rl3y8ktr24uo" path="res://scripts/enemies/cyclops.gd" id="1_6t0y2"]
 [ext_resource type="Texture2D" uid="uid://kk5dmjgy4fcv" path="res://assets/sprites/cyclops/Cyclops(Animated)-2.png" id="2_iq056"]
 [ext_resource type="Texture2D" uid="uid://dfaac8mwwb6ta" path="res://assets/sprites/cyclops/Cyclops(Animated)-3.png" id="3_6ppmm"]
 [ext_resource type="Texture2D" uid="uid://bf6tjgtod2tm8" path="res://assets/sprites/cyclops/LongCyclops.png" id="3_lxdr3"]
 [ext_resource type="Texture2D" uid="uid://c28yw77rpsd2f" path="res://assets/sprites/cyclops/MouthCyclops.png" id="4_51lru"]
 [ext_resource type="Texture2D" uid="uid://d4k6irsmks5pv" path="res://assets/sprites/cyclops/Cyclops(Animated)-1.png" id="4_p5ear"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t0y2"]
 size = Vector2(245.5, 351.647)
@@ -81,7 +80,6 @@ scale = Vector2(0.91, 0.91)
 sprite_frames = SubResource("SpriteFrames_75ls0")
 animation = &"jump"
 autoplay = "stand"
-
 
 [node name="P1HitBox" type="Area2D" parent="Phase1"]
 show_behind_parent = true

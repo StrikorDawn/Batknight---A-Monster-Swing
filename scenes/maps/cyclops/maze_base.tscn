@@ -258,6 +258,7 @@ shape = SubResource("SegmentShape2D_ln35k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -280,10 +281,11 @@ anchor_bottom = 1.0
 offset_top = -8.0
 offset_right = 8.0
 grow_vertical = 0
+disabled = true
 text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(-830, 1510)
+position = Vector2(6932, 1116)
 
 [node name="Gobbies" type="Node" parent="."]
 

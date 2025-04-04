@@ -4,7 +4,7 @@ extends Node2D
 @onready var side_door: TileMapLayer = $SideDoor
 
 @onready var GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
-const CYCLOPS = preload("res://scenes/enemies/cyclops.tscn")
+const CYCLOPS = preload("res://scenes/enemies/cyclopes.tscn")
 
 func _on_close_door_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
