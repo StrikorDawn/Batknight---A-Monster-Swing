@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var top_door: TileMapLayer = $TopDoor
 @onready var side_door: TileMapLayer = $SideDoor
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @onready var GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
 const CYCLOPES = preload("res://scenes/enemies/cyclopes.tscn")
@@ -21,7 +22,7 @@ func _on_to_guild_camp_body_entered(body: Node2D) -> void:
 
 
 func _on_start_boss_battle_body_entered(body: Node2D) -> void:
-	
+	audio_stream_player.play()
 	if body.is_in_group("Player"):
 		var boss_boi = CYCLOPES.instantiate()
 		add_child(boss_boi)

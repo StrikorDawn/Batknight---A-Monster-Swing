@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dptm87w8bl8xb"]
+[gd_scene load_steps=13 format=4 uid="uid://dptm87w8bl8xb"]
 
 [ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://38lo2qq8nqw5" path="res://assets/sprites/player/PlayerConceptV1.1.png" id="7_b6l8a"]
 [ext_resource type="Texture2D" uid="uid://dgok4p6fkp0rj" path="res://assets/sprites/player/ConceptPlayerV1.2.png" id="8_nadx6"]
 [ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/NPCs/greg.tscn" id="8_nsvp3"]
+[ext_resource type="AudioStream" uid="uid://bda8e4hu5qcff" path="res://assets/sounds/Music/Main Theme (Guild Camp).mp3" id="8_sk0h3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf2ps"]
 texture = ExtResource("1_lfqax")
@@ -515,6 +516,7 @@ scale = Vector2(0.54386, 0.54386)
 texture = ExtResource("7_b6l8a")
 
 [node name="ConceptPlayerV1_2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-75, -51)
 scale = Vector2(0.845395, 0.845395)
 texture = ExtResource("8_nadx6")
@@ -522,3 +524,8 @@ texture = ExtResource("8_nadx6")
 [node name="Greg" parent="." instance=ExtResource("8_nsvp3")]
 position = Vector2(1068, -4)
 scale = Vector2(1.219, 1.219)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_sk0h3")
+autoplay = true
+parameters/looping = true
