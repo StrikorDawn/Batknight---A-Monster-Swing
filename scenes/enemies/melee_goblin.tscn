@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bnpsnrh55vejd"]
+[gd_scene load_steps=32 format=3 uid="uid://bnpsnrh55vejd"]
 
 [ext_resource type="Texture2D" uid="uid://dkwn6yntt5cmr" path="res://assets/sprites/goblin/Goblin_idle.png" id="1_g2xqn"]
 [ext_resource type="Script" uid="uid://voa2ruqc0gn1" path="res://scripts/enemies/subclasses/enemy_melee.gd" id="1_yj88r"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://hv6o2caoeg2v" path="res://assets/sprites/goblin/Goblin_hit.png" id="4_ai2sm"]
 [ext_resource type="Texture2D" uid="uid://ddnthn6fiunkm" path="res://assets/sprites/goblin/Goblin_die.png" id="4_o4nt0"]
 [ext_resource type="Texture2D" uid="uid://cyh7480b1v6xj" path="res://assets/sprites/goblin/Goblin_walk.png" id="5_o4nt0"]
+[ext_resource type="Script" uid="uid://ba28j1qrwbscl" path="res://scripts/player/health_bar.gd" id="7_o4nt0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21mh2"]
 radius = 16.0
@@ -204,6 +205,21 @@ sprite_frames = SubResource("SpriteFrames_ai2sm")
 animation = &"idle"
 autoplay = "idle"
 
+[node name="GobbyHealthBar" type="ProgressBar" parent="Sprite"]
+modulate = Color(1, 0.02, 0.02, 1)
+offset_left = -9.5
+offset_top = -12.25
+offset_right = 183.5
+offset_bottom = 20.75
+scale = Vector2(0.097847, 0.0759707)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+rounded = true
+show_percentage = false
+script = ExtResource("7_o4nt0")
+metadata/_edit_use_anchors_ = true
+
 [node name="AttackPoint" type="Marker2D" parent="."]
 
 [node name="AttackArea" type="Area2D" parent="AttackPoint"]
@@ -213,7 +229,7 @@ collision_mask = 2
 
 [node name="AttackRange" type="RayCast2D" parent="AttackPoint/AttackArea"]
 position = Vector2(29, 0)
-target_position = Vector2(-52, 0)
+target_position = Vector2(-37, 0)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackPoint/AttackArea"]

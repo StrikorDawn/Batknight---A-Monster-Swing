@@ -58,7 +58,6 @@ func start_game():
 	add_child(player)
 
 	# Add a Camera2D as a child to the player
-	player.add_child(Camera2D.new())
 
 	# Connect the player's bat_thrown signal
 	player.bat_thrown.connect(_on_bat_thrown)

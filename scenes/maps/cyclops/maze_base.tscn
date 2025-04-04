@@ -283,7 +283,7 @@ grow_vertical = 0
 text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(-1037, 1304)
+position = Vector2(-830, 1510)
 
 [node name="Gobbies" type="Node" parent="."]
 

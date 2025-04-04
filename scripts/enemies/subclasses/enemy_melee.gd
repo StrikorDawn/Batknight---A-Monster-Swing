@@ -21,6 +21,8 @@ func _ready():
 	attack_damage = 20
 	move_speed = 100
 	attack_buffer = 1.0
+	health_bar.update(max_health,current_health)
+	
 	
 ######################################
 # Movement Functions
@@ -124,9 +126,11 @@ func handle_attack_cooldown():
 # Damage Function
 ######################################
 func take_damage(damage : int):
+	health_bar.update(max_health,current_health)
 	sprite.play("hurt")
 	await sprite.animation_finished
 	super.take_damage(damage)
+	
 
 
 ######################################

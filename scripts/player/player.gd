@@ -22,6 +22,7 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 @onready var bat_spawn_point: Marker2D = %BatSpawnPoint
 @onready var recovery_timer : Timer = $RecoveryTimer
 @onready var attack_area = $BatSpawnPoint/AttackArea
+@onready var health_bar: ProgressBar = $CanvasLayer/HealthBar
 
 ######################################
 # Custom Player Gravity Calculations
@@ -33,7 +34,8 @@ const BAT = preload("res://scenes/bat/bat.tscn")
 ######################################
 # Player Movment Variables
 ######################################
-@export var health : int = 100
+@export var current_health : int = 100
+@export var max_health : int = 100
 @export var move_speed : int = 275
 @export var dash_speed : int = 1000
 @export var jump_height: float = 125
@@ -90,6 +92,7 @@ func _ready():
 	
 	# Set initial state
 	set_state(states["Idle"])
+	health_bar.update(max_health, current_health)
 
 ######################################
 # Calls Physics Code
@@ -127,11 +130,12 @@ func set_state(new_state: PlayerState):
 ######################################
 func take_damage(amount: int, attaker_position : Vector2):
 	var knockback_direction = (global_position - attaker_position).normalized()
-	health -= amount
-	print(health)
+	current_health -= amount
+	health_bar.update(max_health, current_health) #updates the health bar 
+	print(current_health)
 	
-	if health <= 0:
-		health = 0
+	if current_health <= 0:
+		current_health = 0
 		set_state(states["Death"])
 	else:
 		set_state(states["Damage"])  # Enter damage state
