@@ -4,7 +4,7 @@ extends Node2D
 @onready var side_door: TileMapLayer = $SideDoor
 
 @onready var GUILD_CAMP = preload("res://scenes/Maps/guild_camp.tscn")
-const CYCLOPES = preload("res://scenes/enemies/cyclopes.tscn")
+const CYCLOPS = preload("res://scenes/enemies/cyclops.tscn")
 
 func _on_close_door_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
@@ -23,13 +23,11 @@ func _on_to_guild_camp_body_entered(body: Node2D) -> void:
 func _on_start_boss_battle_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Player"):
-		var boss_boi = CYCLOPES.instantiate()
+		var boss_boi = CYCLOPS.instantiate()
 		add_child(boss_boi)
 		var boss_spawn = get_node("BossSpawn")
 	
 		boss_boi.position = boss_spawn.position
-	
-		boss_boi.start_boss_fight()
 		
 		boss_boi.dead_boss.connect(_open_escape_door)
 	

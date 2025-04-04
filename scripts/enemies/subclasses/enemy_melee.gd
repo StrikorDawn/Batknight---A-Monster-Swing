@@ -10,19 +10,17 @@ class_name EnemyMelee
 @onready var detection_area = $"DetectionArea"
 @onready var attack_cooldown = $AttackCooldown
 @onready var attack_range = $AttackPoint/AttackArea/AttackRange
+@onready var damage_cooldown: Timer = $DamageCooldown
 
 ######################################
 # Enemy Variables
 ######################################
 func _ready():
-	super._ready()
 	max_health = 50
-	current_health = max_health
 	attack_damage = 20
 	move_speed = 100
 	attack_buffer = 1.0
-	health_bar.update(max_health,current_health)
-	
+	super._ready()
 	
 ######################################
 # Movement Functions
@@ -126,13 +124,13 @@ func handle_attack_cooldown():
 # Damage Function
 ######################################
 func take_damage(damage : int):
-	health_bar.update(max_health,current_health)
-	sprite.play("hurt")
-	await sprite.animation_finished
 	super.take_damage(damage)
-	
-
-
+	print("Enemy: " + str(current_health))
+	if not is_dead:
+		set_physics_process(false)
+		sprite.play("hurt")
+		await sprite.animation_finished
+		set_physics_process(true)
 ######################################
 # Death Functions
 ######################################

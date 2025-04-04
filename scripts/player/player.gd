@@ -71,6 +71,8 @@ var current_state: PlayerState
 func _ready():
 	add_to_group("Player")
 	attack_area.monitoring = false
+	attack_area.visible = false
+	
 	# Create and store state instances
 	states["Idle"] = IdleState.new()
 	states["Run"] = RunState.new()

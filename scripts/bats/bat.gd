@@ -51,7 +51,7 @@ func _on_grab_area_entered(body: Node2D) -> void:
 
 func _on_enemy_body_entered(body: Node2D) -> void:
 	# Apply damage only when the bat is not sleeping
-	if not is_sleeping() and body.is_in_group("Enemy"):
+	if not is_sleeping() and body.is_in_group("Enemy") and abs(linear_velocity.x) > 10:
 		body.take_damage(damage)  # Replace with your desired damage amount
 
 

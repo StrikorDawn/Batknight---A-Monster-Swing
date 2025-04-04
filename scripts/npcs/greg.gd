@@ -16,7 +16,7 @@ func _on_body_exited(body: CharacterBody2D) -> void:
 		to_maze.disabled = true
 
 func _on_to_maze_pressed() -> void:
-	var current_scene = GUILD_CAMP
+	var _current_scene = GUILD_CAMP
 	var maze = CYCLOPES_MAZE
 	Main.load_new_scene(maze) #this might work but it is still a work in progress
 	pass # Replace with function body.
