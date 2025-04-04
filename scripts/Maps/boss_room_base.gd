@@ -27,9 +27,13 @@ func _on_start_boss_battle_body_entered(body: Node2D) -> void:
 		var boss_boi = CYCLOPES.instantiate()
 		add_child(boss_boi)
 		var boss_spawn = get_node("BossSpawn")
-	
+		
 		boss_boi.position = boss_spawn.position
 	
+		set_physics_process(false)
+		await get_tree().create_timer(2).timeout
+		set_physics_process(true)
+		
 		boss_boi.start_boss_fight()
 		
 		boss_boi.dead_boss.connect(_open_escape_door)
