@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://c24507ky4oc6"]
 
-[ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/maps/maze.gd" id="1_wjeuv"]
+[ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/Maps/maze.gd" id="1_wjeuv"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_dwqcc"]
 [ext_resource type="PackedScene" uid="uid://bnpsnrh55vejd" path="res://scenes/enemies/melee_goblin.tscn" id="3_s0a0i"]
 
@@ -258,6 +258,7 @@ shape = SubResource("SegmentShape2D_ln35k")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -5
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = -1
@@ -281,13 +282,101 @@ anchor_bottom = 1.0
 offset_top = -8.0
 offset_right = 8.0
 grow_vertical = 0
+disabled = true
 text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
 position = Vector2(7360, 1178)
 
-[node name="MeleeGoblin" parent="." instance=ExtResource("3_s0a0i")]
+
+[node name="Gobbies" type="Node" parent="."]
+
+[node name="MeleeGoblin" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(89, 1699)
+
+[node name="MeleeGoblin2" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(1614, 2163)
+
+[node name="MeleeGoblin3" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2320, 2167)
+
+[node name="MeleeGoblin4" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2220, 1708)
+
+[node name="MeleeGoblin5" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2909, 1261)
+
+[node name="MeleeGoblin6" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2880, 822)
+
+[node name="MeleeGoblin7" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2011, 818)
+
+[node name="MeleeGoblin8" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(1760, 250)
+
+[node name="MeleeGoblin9" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(787, 375)
+
+[node name="MeleeGoblin10" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(1046, -523)
+
+[node name="MeleeGoblin11" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(3715, -80)
+
+[node name="MeleeGoblin12" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5043, -527)
+
+[node name="MeleeGoblin13" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5853, -531)
+
+[node name="MeleeGoblin14" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5018, 363)
+
+[node name="MeleeGoblin15" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(4258, 818)
+
+[node name="MeleeGoblin16" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5511, 1269)
+
+[node name="MeleeGoblin17" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(6213, 371)
+
+[node name="MeleeGoblin18" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5336, 1846)
+
+[node name="MeleeGoblin19" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5770, 1850)
+
+[node name="MeleeGoblin20" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5728, 2744)
+
+[node name="MeleeGoblin22" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5331, 3508)
+
+[node name="MeleeGoblin23" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(3238, 3500)
+
+[node name="MeleeGoblin29" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2794, 2921)
+
+[node name="MeleeGoblin24" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(1484, 3496)
+
+[node name="MeleeGoblin25" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(360, 3124)
+
+[node name="MeleeGoblin26" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(1459, 2619)
+
+[node name="MeleeGoblin27" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(2848, -444)
+
+[node name="MeleeGoblin28" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(3677, 2159)
+
+[node name="MeleeGoblin21" parent="Gobbies" instance=ExtResource("3_s0a0i")]
+position = Vector2(5532, 2176)
 
 [connection signal="body_entered" from="ToBossRoom" to="." method="_on_to_boss_room_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

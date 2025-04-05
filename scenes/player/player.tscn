@@ -1,10 +1,11 @@
-[gd_scene load_steps=55 format=3 uid="uid://qgg20fyvktk7"]
+[gd_scene load_steps=56 format=3 uid="uid://qgg20fyvktk7"]
 
 [ext_resource type="Script" uid="uid://bw1tqycbkhfl4" path="res://scripts/player/player.gd" id="1_aoqmc"]
 [ext_resource type="Texture2D" uid="uid://48ulvy6rijdf" path="res://assets/sprites/player/ATTACK 1.png" id="2_063av"]
 [ext_resource type="Texture2D" uid="uid://cl43hcmadg014" path="res://assets/sprites/player/HURT.png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://0hqr6rx445ir" path="res://assets/sprites/player/IDLE.png" id="4_vl6bc"]
 [ext_resource type="Texture2D" uid="uid://d2keu6x4kihe0" path="res://assets/sprites/player/RUN.png" id="5_fnxm2"]
+[ext_resource type="Script" uid="uid://ba28j1qrwbscl" path="res://scripts/player/health_bar.gd" id="6_75vfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
 size = Vector2(90, 94)
@@ -430,6 +431,23 @@ wait_time = 0.5
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="RecoveryTimer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer"]
+modulate = Color(1, 0.02, 0.02, 1)
+offset_left = 15.0
+offset_top = 13.0
+offset_right = 208.0
+offset_bottom = 46.0
+scale = Vector2(1.35671, 1.41202)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+rounded = true
+show_percentage = false
+script = ExtResource("6_75vfm")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="BatSpawnPoint/AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="Dash/DashTimer" to="." method="_on_dash_timer_timeout"]

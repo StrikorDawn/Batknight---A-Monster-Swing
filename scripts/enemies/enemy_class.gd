@@ -4,6 +4,7 @@ class_name EnemyBase
 ######################################
 # Node References
 ######################################
+@onready var health_bar: ProgressBar = $Sprite/GobbyHealthBar
 
 
 ######################################

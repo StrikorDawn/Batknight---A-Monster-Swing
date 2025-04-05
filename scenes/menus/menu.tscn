@@ -1,35 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0fnr3stryeth"]
+[gd_scene load_steps=4 format=3 uid="uid://b0fnr3stryeth"]
 
-
-[ext_resource type="Texture2D" uid="uid://blwv2rlcqgnav" path="res://assets/ui/Play.png" id="1_e4y07"]
-[ext_resource type="Script" uid="uid://813ir1fnd7xc" path="res://scripts/menus/main_menu.gd" id="1_khuto"]
+[ext_resource type="Script" uid="uid://bj75naq75ca6v" path="res://scripts/Menus/main_menu.gd" id="1_khuto"]
+[ext_resource type="Texture2D" uid="uid://dmd4d82xj05aa" path="res://assets/sprits/Buttons/PlayButton.png" id="2_65ltr"]
+[ext_resource type="Texture2D" uid="uid://ccm0eqs4hc1oi" path="res://assets/sprits/Buttons/QuitButton.png" id="3_cfcag"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_khuto")
 
 [node name="Play" type="Sprite2D" parent="."]
-position = Vector2(562, 288)
-scale = Vector2(14.9776, 14.9776)
-texture = ExtResource("1_e4y07")
+position = Vector2(560, 206)
+scale = Vector2(3.34894, 3.34894)
+texture = ExtResource("2_65ltr")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Play"]
 modulate = Color(1, 1, 1, 0)
-offset_left = 39.0
-offset_top = 233.0
-offset_right = 47.0
-offset_bottom = 241.0
-scale = Vector2(112.113, 14.9249)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = -5
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-offset_left = -50.0
-offset_top = -54.0
-offset_right = -10.0
-offset_bottom = -14.0
-scale = Vector2(30.9102, 18.8824)
-color = Color(0.113725, 0.34902, 0.643137, 1)
+anchors_preset = -1
+anchor_left = -0.164491
+anchor_top = -0.0806396
+anchor_right = 0.0542594
+anchor_bottom = 0.184985
+offset_left = -15.9452
+offset_top = -7.67813
+offset_right = -7.9452
+offset_bottom = -7.67813
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.04029, 1.03655)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="QuitButton" type="Sprite2D" parent="."]
+position = Vector2(560, 410)
+scale = Vector2(3.349, 3.349)
+texture = ExtResource("3_cfcag")
+
+[node name="Quit" type="Button" parent="QuitButton"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -41.5049
+offset_top = -19.1102
+offset_right = 5.4951
+offset_bottom = 7.88983
+scale = Vector2(1.78379, 1.43403)
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="Play/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="QuitButton/Quit" to="." method="_on_quit_pressed"]

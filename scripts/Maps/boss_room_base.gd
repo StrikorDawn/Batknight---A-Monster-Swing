@@ -4,10 +4,9 @@ extends Node2D
 @onready var side_door: TileMapLayer = $SideDoor
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var boss_spawn: Marker2D = $BossSpawn
-
 @onready var GUILD_CAMP = preload("res://scenes/maps/guild_camp.tscn")
 const CYCLOPES = preload("res://scenes/enemies/cyclops.tscn")
-	
+
 func _on_close_door_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		top_door.enabled = true

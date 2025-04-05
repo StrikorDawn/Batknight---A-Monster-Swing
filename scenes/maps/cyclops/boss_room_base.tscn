@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://b5h7ijeoo64g4"]
+[gd_scene load_steps=7 format=4 uid="uid://dn2ndfnsytawo"]
 
 [ext_resource type="Script" uid="uid://28xhrw4u87sc" path="res://scripts/maps/boss_room_base.gd" id="1_ctnyv"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_hv88p"]
