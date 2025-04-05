@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4k6irsmks5pv"
-path="res://.godot/imported/Cyclops(Animated)-1.png-cf3c37b3f8aee2694bf8bc76c7b627d1.ctex"
+uid="uid://p53bbsrfki2q"
+path="res://.godot/imported/PlayButton.png-0397809ad27e8dc664b98a4fec0490f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/cyclops/Cyclops(Animated)-1.png"
-dest_files=["res://.godot/imported/Cyclops(Animated)-1.png-cf3c37b3f8aee2694bf8bc76c7b627d1.ctex"]
+source_file="res://assets/buttons/PlayButton.png"
+dest_files=["res://.godot/imported/PlayButton.png-0397809ad27e8dc664b98a4fec0490f7.ctex"]
 
 [params]
 

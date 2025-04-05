@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxo2uucp5l8n"
+path="res://.godot/imported/Cave (THIS ONE).mp3-6c91c0fae440cf557e15fc1f98a95d03.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Music/Cave (THIS ONE).mp3"
+dest_files=["res://.godot/imported/Cave (THIS ONE).mp3-6c91c0fae440cf557e15fc1f98a95d03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

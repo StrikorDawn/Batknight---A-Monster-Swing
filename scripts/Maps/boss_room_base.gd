@@ -22,7 +22,7 @@ func _on_to_guild_camp_body_entered(body: Node2D) -> void:
 
 
 func _on_start_boss_battle_body_entered(body: Node2D) -> void:
-	#audio_stream_player.play()
+	audio_stream_player.play()
 	if body.is_in_group("Player"):
 		var boss_boi = CYCLOPES.instantiate()
 		boss_boi.dead_boss.connect(_open_escape_door)
