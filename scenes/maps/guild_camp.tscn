@@ -1,16 +1,15 @@
-[gd_scene load_steps=13 format=4 uid="uid://dptm87w8bl8xb"]
-
+[gd_scene load_steps=15 format=4 uid="uid://dptm87w8bl8xb"]
 
 [ext_resource type="Texture2D" uid="uid://cihdh3fa4dm8b" path="res://assets/backgrounds/SkyBG.png" id="1_7uew7"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_lfqax"]
-[ext_resource type="Script" uid="uid://d1v6akv4ufitd" path="res://scripts/Maps/guild_camp.gd" id="1_nsvp3"]
+[ext_resource type="Script" uid="uid://d1v6akv4ufitd" path="res://scripts/maps/guild_camp.gd" id="1_nsvp3"]
 [ext_resource type="Texture2D" uid="uid://ctu3hhwel0rtd" path="res://assets/objects/PlayerHouse.png" id="1_r2gjj"]
 [ext_resource type="Texture2D" uid="uid://cwr4snn4aahy3" path="res://assets/objects/ShopV2.png" id="3_7uew7"]
 [ext_resource type="Texture2D" uid="uid://38lo2qq8nqw5" path="res://assets/sprites/player/PlayerConceptV1.1.png" id="7_b6l8a"]
 [ext_resource type="Texture2D" uid="uid://dgok4p6fkp0rj" path="res://assets/sprites/player/ConceptPlayerV1.2.png" id="8_nadx6"]
-[ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/NPCs/greg.tscn" id="8_nsvp3"]
-[ext_resource type="AudioStream" uid="uid://bda8e4hu5qcff" path="res://assets/sounds/Music/Main Theme (Guild Camp).mp3" id="8_sk0h3"]
-
+[ext_resource type="PackedScene" uid="uid://ci88fr8vwy74s" path="res://scenes/npcs/greg.tscn" id="8_nsvp3"]
+[ext_resource type="PackedScene" uid="uid://b0fnr3stryeth" path="res://scenes/menus/menu.tscn" id="8_sk0h3"]
+[ext_resource type="AudioStream" uid="uid://bda8e4hu5qcff" path="res://assets/sounds/Music/Main Theme (Guild Camp).mp3" id="10_1oh7l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf2ps"]
 texture = ExtResource("1_lfqax")
@@ -529,8 +528,15 @@ texture = ExtResource("8_nadx6")
 position = Vector2(1068, -4)
 scale = Vector2(1.219, 1.219)
 
+[node name="Menu" parent="." instance=ExtResource("8_sk0h3")]
+process_mode = 3
+position = Vector2(105, -1808)
+
+[node name="Camera2D" type="Camera2D" parent="Menu"]
+position = Vector2(573, 322)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_sk0h3")
-volume_db = -2.342
+stream = ExtResource("10_1oh7l")
+volume_db = -2.0
 autoplay = true
 parameters/looping = true

@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 			apply_gravity(delta)
 		else:
 			detect_player()
-			if distance > 250:
+			if distance > 300:
 				small_jump()
 			else:
 				if is_on_wall():

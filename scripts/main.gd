@@ -119,6 +119,9 @@ func _on_bat_grabbed():
 #Navigation
 ######################################
 
+func _set_scene():
+	var scene = CYCLOPES_BOSS_ROOM
+	load_new_scene(scene)
 
 func load_new_scene(new_scene): #set it up to pass the new scene through the 
 	#print("print")

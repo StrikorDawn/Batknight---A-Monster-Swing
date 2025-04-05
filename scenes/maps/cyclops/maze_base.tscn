@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://c24507ky4oc6"]
+[gd_scene load_steps=8 format=4 uid="uid://c24507ky4oc6"]
 
-[ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/Maps/maze.gd" id="1_wjeuv"]
+[ext_resource type="Script" uid="uid://cdl364b4qhmjy" path="res://scripts/maps/maze.gd" id="1_wjeuv"]
 [ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_dwqcc"]
 [ext_resource type="PackedScene" uid="uid://bnpsnrh55vejd" path="res://scenes/enemies/melee_goblin.tscn" id="3_s0a0i"]
-[ext_resource type="AudioStream" uid="uid://bxo2uucp5l8n" path="res://assets/sounds/Music/Cave (THIS ONE).mp3" id="3_jflob"]
+[ext_resource type="AudioStream" uid="uid://bxo2uucp5l8n" path="res://assets/sounds/Music/Cave (THIS ONE).mp3" id="4_4stkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6g7q1"]
 texture = ExtResource("2_dwqcc")
@@ -287,61 +287,66 @@ disabled = true
 text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(7360, 1178)
-
+position = Vector2(-1019, 1258)
 
 [node name="Gobbies" type="Node" parent="."]
 
 [node name="MeleeGoblin" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(89, 1699)
 
-[node name="MeleeGoblin2" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin2" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(391, 834)
 
-[node name="MeleeGoblin3" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin3" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(824, 375)
 
-[node name="MeleeGoblin4" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin4" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(2122, 847)
 
-[node name="MeleeGoblin5" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin5" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(2528, 1280)
 
-[node name="MeleeGoblin6" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin6" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(2515, 1686)
 
-[node name="MeleeGoblin7" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin7" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(2200, 2158)
 
-[node name="MeleeGoblin8" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin8" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(404, 3076)
 
-[node name="MeleeGoblin9" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin9" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(2108, 3482)
 
-[node name="MeleeGoblin10" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin10" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(3773, 3062)
 
-[node name="MeleeGoblin11" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin11" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(5451, 2171)
 
-[node name="MeleeGoblin12" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin12" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(5149, 3508)
 
-[node name="MeleeGoblin13" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin13" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(5306, 1279)
 
-[node name="MeleeGoblin14" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin14" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(4297, 820)
 
-[node name="MeleeGoblin15" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin15" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(3917, -85)
 
-[node name="MeleeGoblin16" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin16" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(5451, -518)
 
-[node name="MeleeGoblin17" parent="." instance=ExtResource("3_s0a0i")]
+[node name="MeleeGoblin17" parent="Gobbies" instance=ExtResource("3_s0a0i")]
 position = Vector2(6198, 347)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4stkx")
+volume_db = 2.0
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="ToBossRoom" to="." method="_on_to_boss_room_body_entered"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=4 uid="uid://b5h7ijeoo64g4"]
 
-[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="1_n1ahf"]
-[ext_resource type="Script" uid="uid://28xhrw4u87sc" path="res://scripts/maps/boss_room_base.gd" id="1_nfa7k"]
-[ext_resource type="AudioStream" uid="uid://bof142kn6k1r0" path="res://assets/sounds/Music/Boss (THIS ONE).mp3" id="3_ux08i"]
+[ext_resource type="Script" uid="uid://28xhrw4u87sc" path="res://scripts/maps/boss_room_base.gd" id="1_ctnyv"]
+[ext_resource type="Texture2D" uid="uid://tgqdh7gbi1c7" path="res://assets/tile_maps/The Platformer v1-0 Alpha.png" id="2_hv88p"]
+[ext_resource type="AudioStream" uid="uid://bof142kn6k1r0" path="res://assets/sounds/Music/Boss (THIS ONE).mp3" id="3_hv88p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6433"]
 texture = ExtResource("2_hv88p")
@@ -281,11 +281,11 @@ position = Vector2(1139, 1018)
 shape = SubResource("SegmentShape2D_i70v6")
 
 [node name="BossSpawn" type="Marker2D" parent="."]
-position = Vector2(903, 971)
+position = Vector2(906, 1024)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_ux08i")
-volume_db = 2.342
+stream = ExtResource("3_hv88p")
+volume_db = 2.0
 parameters/looping = true
 
 [connection signal="body_exited" from="CloseDoor" to="." method="_on_close_door_body_exited"]

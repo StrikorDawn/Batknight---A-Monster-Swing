@@ -8,16 +8,9 @@ extends Node2D
 
 func _ready() -> void:
 	menu.start_game.connect(begin)
-		
-	
-	
+
 func begin():
-	game_start = true
-	Main.start_game()
-	camera_2d.queue_free()
-
-#var speed: float = 5.0
-
-#func _process(delta):
-	#position = position.lerp(player_spawn.position, 1 - exp(-speed * delta))
-	
+	if has_node("Menu/Camera2D"):
+		game_start = true
+		Main.start_game()
+		camera_2d.queue_free()
