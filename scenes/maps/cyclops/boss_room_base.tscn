@@ -207,8 +207,8 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_g6433")
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nfa7k"]
-a = Vector2(25.4828, -16.3882)
-b = Vector2(199.347, -24.3308)
+a = Vector2(15, -40)
+b = Vector2(208, -40)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_i70v6"]
 a = Vector2(974, 195)

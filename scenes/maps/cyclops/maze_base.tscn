@@ -274,6 +274,7 @@ color = Color(0.314329, 0.304613, 0.34011, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -283,7 +284,7 @@ grow_vertical = 0
 text = "Reset"
 
 [node name="PlayerSpawn" type="Marker2D" parent="."]
-position = Vector2(-1037, 1304)
+position = Vector2(7360, 1178)
 
 [node name="MeleeGoblin" parent="." instance=ExtResource("3_s0a0i")]
 position = Vector2(89, 1699)

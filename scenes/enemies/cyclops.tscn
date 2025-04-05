@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://doo6ic40kufsm"]
+
+[ext_resource type="Script" uid="uid://rl3y8ktr24uo" path="res://scripts/enemies/cyclops.gd" id="1_6t0y2"]
+[ext_resource type="Texture2D" uid="uid://kk5dmjgy4fcv" path="res://assets/sprites/cyclops/Cyclops(Animated)-2.png" id="2_iq056"]
+[ext_resource type="Texture2D" uid="uid://dfaac8mwwb6ta" path="res://assets/sprites/cyclops/Cyclops(Animated)-3.png" id="3_6ppmm"]
+[ext_resource type="Texture2D" uid="uid://d4k6irsmks5pv" path="res://assets/sprites/cyclops/Cyclops(Animated)-1.png" id="4_p5ear"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t0y2"]
+size = Vector2(245.5, 351.647)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_75ls0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6ppmm")
+}],
+"loop": false,
+"name": &"in_air",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iq056")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iq056")
+}],
+"loop": false,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p5ear")
+}],
+"loop": false,
+"name": &"stand",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxdr3"]
+size = Vector2(14.1196, 18.9089)
+
+[node name="Cyclopes" type="CharacterBody2D"]
+z_index = -1
+collision_layer = 8
+script = ExtResource("1_6t0y2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 9
+position = Vector2(7, 46.44)
+scale = Vector2(0.68, 0.68)
+shape = SubResource("RectangleShape2D_6t0y2")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 6)
+scale = Vector2(0.91, 0.91)
+sprite_frames = SubResource("SpriteFrames_75ls0")
+animation = &"jump"
+autoplay = "stand"
+
+[node name="HitArea" type="Area2D" parent="."]
+show_behind_parent = true
+position = Vector2(8, 19)
+scale = Vector2(0.68, 0.68)
+collision_layer = 8
+collision_mask = 2
+
+[node name="HitShap" type="CollisionShape2D" parent="HitArea"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0.500005, 40.4412)
+scale = Vector2(20.6097, 20.6097)
+shape = SubResource("RectangleShape2D_lxdr3")
+debug_color = Color(1, 0.0040581, 0.067206, 0.42)
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="HitArea" to="." method="_on_hit_area_body_entered"]
